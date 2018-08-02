@@ -1,0 +1,60 @@
+body{
+    background-image: url(../topography.png);
+}
+.uptop{
+    background:#333333;
+}
+img{
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    padding-left: 3em;
+}
+
+.links{
+    float:right;
+    padding-top: 0.3em;
+    padding-right: 2em;
+    font-family: 'Courier New', Courier, monospace;
+}
+a{
+    color:#ff0099;
+    text-decoration: underline;
+}
+
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 300%;
+    padding-top: 1em;
+    padding-left: 1em;
+}
+
+h2{
+    padding-left: 2em;
+    padding-top: 0em;
+    color:#ff0099;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h3{
+    padding-left: 2em;
+    padding-top: 0em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+p{
+    padding-left: 3em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+ul a{
+    margin-right: 20px;
+}
+
+.lines{
+    text-align: center;
+    padding-top: 2em;
+    font-weight: bold;
+}
+
+.wiki{
+    text-align: center;
+}
