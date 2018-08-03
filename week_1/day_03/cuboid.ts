@@ -6,3 +6,12 @@
 // Surface Area: 600
 // Volume: 1000
 
+let l: number = 16.25;
+let w: number = 7.5;
+let h: number = 7.5;
+
+let surfaceArea: number = (2 * ((l * w) + (l * h) + (w * h)));
+console.log('Surface Area: ' + surfaceArea);
+
+let volume: number = (l * w * h);
+console.log('Volume: ' + volume);
