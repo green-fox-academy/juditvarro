@@ -13,12 +13,16 @@ for (let i = 0; i < integers.length; i++) {
     console.log(integers[i]);
 }
 
+
 // Or:
+
 
 integers.forEach(function (input: number) {
     console.log(input);
 })
 
+
 // Not in separate lines, but still:
+
 
 console.log(integers.toString());
