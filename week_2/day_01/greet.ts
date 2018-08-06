@@ -21,3 +21,4 @@ function greet(par?: string) {
     }
 
     greet();
+    
