@@ -14,9 +14,9 @@ let name: string = ' Greenfox';
 
 function greet(par?: string) {
     if (par == undefined) {
-        console.log("Greetings, dear friend!");
+        console.log('Greetings, dear friend!');
     } else {
-        console.log("Greetings, dear" + par);
+        console.log('Greetings, dear' + par);
             }
     }
 
