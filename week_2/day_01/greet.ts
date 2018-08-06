@@ -10,14 +10,6 @@ export { };
 
 
 
-/*
-function greet(input: string){
-    console.log("Greetings, dear" + name);
-}
-
-greet(name);*/
-
-
 let name: string = ' Greenfox';
 
 function greet(par?: string) {
@@ -28,4 +20,4 @@ function greet(par?: string) {
             }
     }
 
-    greet(name);
+    greet();
