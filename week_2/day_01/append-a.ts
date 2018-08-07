@@ -8,4 +8,6 @@ export {};
 
 let animals: string[] = ['koal', 'pand', 'zebr'];
 
-animals.map
+animals.forEach(function(input) {
+    console.log(input + 'a');
+})
