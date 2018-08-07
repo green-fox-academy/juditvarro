@@ -5,5 +5,7 @@
 
 let url: string = 'https//www.reddit.com/r/nevertellmethebots';
 
-console.log(url);
+let goodUrl: string = url.replace('https//www.reddit.com/r/nevertellmethebots', 'https://www.reddit.com/r/nevertellmetheodds')
+
+console.log(goodUrl);
 
