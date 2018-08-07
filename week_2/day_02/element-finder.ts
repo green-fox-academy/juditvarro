@@ -5,25 +5,27 @@
 
 const numbers: number[] = [1, 2, 3, 4, 5, 6, 8];
 
-function containsSeven (input: number []) {
+function containsSeven(input: number[]) {
     if (input.indexOf(7) == -1) {
         return "Noooooo";
     } else {
         return "Hoorray";
     }
 }
-console.log(containsSeven(numbers)); 
+console.log(containsSeven(numbers));
 
 // The output should be: "Noooooo"
 // Do this again with a different solution using different list functions!
 
-function containsSevenToo (input: number []) {
-    if (input.some(7) == -1) {
-        return "Noooooo";
+function containsSevenToo(input: number[]) {
+    if (input.some(function (elem: number) {
+        return elem == 7;
+    })) {
+        return 'Hoorray';
     } else {
-        return "Hoorray";
+        return 'Noooooo';
     }
 }
-console.log(containsSevenToo(numbers)); 
+console.log(containsSevenToo(numbers));
 
 export = containsSeven;
