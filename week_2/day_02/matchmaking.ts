@@ -18,7 +18,7 @@ function makingMatches (input1: string[], input2: string[]) {
         } else {
                 numberOfElements = input1.length;
             }
-    for (let i = 0; i <= numberOfElements; i++) {
+    for (let i = 0; i < numberOfElements; i++) {
         commonList.push(input1[i]);
         commonList.push(input2[i]);
     }

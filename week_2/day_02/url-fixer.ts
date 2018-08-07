@@ -5,7 +5,16 @@
 
 let url: string = 'https//www.reddit.com/r/nevertellmethebots';
 
+// one version:
+
 let goodUrl: string = url.replace('https//www.reddit.com/r/nevertellmethebots', 'https://www.reddit.com/r/nevertellmetheodds')
 
 console.log(goodUrl);
+
+// second version:
+
+let goodUrlToo: string = url.replace('bots','odds');
+goodUrlToo = goodUrlToo.replace('https', 'https:');
+
+console.log(goodUrlToo);
 
