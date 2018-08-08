@@ -7,9 +7,18 @@ const ctx = canvas.getContext('2d');
 // Reproduce this:
 // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
 
-ctx.beginPath();
-ctx.fillStyle = 'green';
-ctx.fillRect(50, 50,50, 50);
-ctx.fill();
-ctx.strokeStyle = 'black';
-ctx.fill();
+
+function makeBox(size: number) {
+    let x: number = 15;
+    let y: number = 15;
+    for (let i: number = 1; i < 20; i++) {
+        ctx.beginPath();
+        ctx.fillStyle = '#EE82EE';
+        ctx.strokeStyle;
+        ctx.strokeRect(x * i, y * i, size, size);
+        ctx.fillRect(x * i, y * i, size, size);
+        ctx.fill();
+    }
+}
+
+makeBox(15);
