@@ -19,12 +19,10 @@ function checkerBoard(size: number) {
         if (row % 2 == 0) {
             for (square = 0; square <= numberOfSquare; square++) {
                 if (square % 2 == 0) {
-                    ctx.beginPath();
                     ctx.fillStyle = 'black';
                     ctx.fillRect(square * squareSize, row * squareSize, squareSize, squareSize);
                     ctx.fill;
                 } else {
-                    ctx.beginPath();
                     ctx.fillStyle = 'white';
                     ctx.fillRect(square * squareSize, row * squareSize, squareSize, squareSize);
                     ctx.fill;
@@ -33,12 +31,10 @@ function checkerBoard(size: number) {
         } else {
             for (square = 0; square <= numberOfSquare; square++) {
                 if (square % 2 == 0) {
-                    ctx.beginPath();
                     ctx.fillStyle = 'white';
                     ctx.fillRect(square * squareSize, row * squareSize, squareSize, squareSize);
                     ctx.fill;
                 } else {
-                    ctx.beginPath();
                     ctx.fillStyle = 'black';
                     ctx.fillRect(square * squareSize, row * squareSize, squareSize, squareSize);
                     ctx.fill;

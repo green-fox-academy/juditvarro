@@ -12,7 +12,6 @@ function makeBox(size: number) {
     let x: number = 15;
     let y: number = 15;
     for (let i: number = 1; i < 20; i++) {
-        ctx.beginPath();
         ctx.fillStyle = '#EE82EE';
         ctx.strokeStyle;
         ctx.strokeRect(x * i, y * i, size, size);

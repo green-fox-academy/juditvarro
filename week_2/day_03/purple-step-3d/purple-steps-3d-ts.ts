@@ -12,7 +12,6 @@ function make3DBox(size: number) {
     let x: number = size;
     let y: number = size;
     for (let i: number = 1; i < 10; i++) {
-        ctx.beginPath();
         ctx.fillStyle = '#EE82EE';
         ctx.strokeStyle;
         ctx.strokeRect(x, y, size * i, size * i);

@@ -13,7 +13,6 @@ const ctx = canvas.getContext('2d');
 function square(t: number) {
     for (let i: number = 1; i < 4; i++) {
         let colors = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
-        ctx.beginPath();
         ctx.fillStyle = colors;
         t = t - 20;
         let x: number = (canvas.width / 2) - (t / 2);

@@ -12,7 +12,6 @@ const ctx = canvas.getContext('2d');
 
 function squareDrawer (x: number, y: number) {
     let colors = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
-    ctx.beginPath();
     ctx.fillStyle = colors;
     ctx.fillRect(x, y, 50, 50); 
     ctx.fill();

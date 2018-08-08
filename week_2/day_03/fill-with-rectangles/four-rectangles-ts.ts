@@ -7,9 +7,8 @@ const ctx = canvas.getContext('2d');
 // Draw four different size and color rectangles.
 // Avoid code duplication.
 
-function fourSquares (x: number, y: number, t: number, z: number) {
+function fourSquares(x: number, y: number, t: number, z: number) {
     let colors = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
-    ctx.beginPath();
     ctx.fillStyle = colors;
     ctx.fillRect(x, y, t, z);
     ctx.fill();
