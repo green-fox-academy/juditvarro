@@ -15,9 +15,9 @@ function square(t: number) {
         let colors = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
         ctx.beginPath();
         ctx.fillStyle = colors;
+        t = t - 20;
         let x: number = (canvas.width / 2) - (t / 2);
         let y: number = (canvas.height / 2) - (t / 2);
-        t = t - 20;
         let v: number = t;
         ctx.fillRect(x, y, t, v);
     }
