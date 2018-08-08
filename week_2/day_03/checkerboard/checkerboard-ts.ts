@@ -6,32 +6,46 @@ const ctx = canvas.getContext('2d');
 // DO NOT TOUCH THE CODE ABOVE THIS LINE
 // Fill the canvas with a checkerboard pattern.
 
-function makeLine(size: number, y: number, t: number, v: number) {
-    for (let i: number = 1; i < 20; i++) {
-        ctx.beginPath();
-        if (i % 2 == 0) {
-            ctx.fillStyle = 'black';
+function checkerBoard(size: number) {
+
+    let squareSize: number = size;
+    let row: number;
+    let square: number;
+    let numberOfSquare: number = canvas.width / squareSize;
+    let numberOfRow: number = canvas.height / squareSize;
+
+
+    for (row = 0; row <= numberOfRow; row++) {
+        if (row % 2 == 0) {
+            for (square = 0; square <= numberOfSquare; square++) {
+                if (square % 2 == 0) {
+                    ctx.beginPath();
+                    ctx.fillStyle = 'black';
+                    ctx.fillRect(square * squareSize, row * squareSize, squareSize, squareSize);
+                    ctx.fill;
+                } else {
+                    ctx.beginPath();
+                    ctx.fillStyle = 'white';
+                    ctx.fillRect(square * squareSize, row * squareSize, squareSize, squareSize);
+                    ctx.fill;
+                }
+            }
         } else {
-            ctx.fillStyle = 'white';
+            for (square = 0; square <= numberOfSquare; square++) {
+                if (square % 2 == 0) {
+                    ctx.beginPath();
+                    ctx.fillStyle = 'white';
+                    ctx.fillRect(square * squareSize, row * squareSize, squareSize, squareSize);
+                    ctx.fill;
+                } else {
+                    ctx.beginPath();
+                    ctx.fillStyle = 'black';
+                    ctx.fillRect(square * squareSize, row * squareSize, squareSize, squareSize);
+                    ctx.fill;
+                }
+            }
         }
-        ctx.fillRect(x * i, y, t, v);
-        ctx.fill();
     }
 }
 
-makeLine(0, 0, 20, 20);
-
-
-
-
-
-        /*
-        ctx.beginPath();
-        ctx.fillStyle = '#EE82EE';
-        ctx.strokeStyle;
-        ctx.strokeRect(x * i, y * i, size, size);
-        ctx.fillRect(x * i, y * i, size, size);
-        ctx.fill();
-    }
-}  makeBox(15);*/
-
+checkerBoard(20);
