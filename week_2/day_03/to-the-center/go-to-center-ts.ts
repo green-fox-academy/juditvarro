@@ -9,8 +9,11 @@ const ctx = canvas.getContext('2d');
 // and draws a line from that point to the center of the canvas
 // Draw 3 lines with that function. Use loop for that.
 
+
 function lineDrawer (x: number, y: number) {
+    let colors = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
     ctx.beginPath();
+    ctx.strokeStyle = colors;
     ctx.moveTo(x, y);
     ctx.lineTo(canvas.width / 2, canvas.height / 2);
     ctx.stroke();
@@ -20,5 +23,22 @@ for (let i: number = 1; i < 4; i++) {
     let xCoordinate: number = Math.floor(Math.random() * canvas.width);
     let yCoordinate: number = Math.floor(Math.random() * canvas.height);
     lineDrawer(xCoordinate, yCoordinate);
+} 
+
+/* More lines:
+
+function lineDrawer (x: number, y: number) {
+    let colors = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
+    ctx.beginPath();
+    ctx.strokeStyle = colors;
+    ctx.moveTo(x, y);
+    ctx.lineTo(canvas.width / 2, canvas.height / 2);
+    ctx.stroke();
 }
 
+for (let i: number = 1; i < 100; i++) {
+    let xCoordinate: number = Math.floor(Math.random() * canvas.width);
+    let yCoordinate: number = Math.floor(Math.random() * canvas.height);
+    lineDrawer(xCoordinate, yCoordinate);
+}
+*/
