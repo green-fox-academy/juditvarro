@@ -15,10 +15,12 @@ function fourSquares(x: number, y: number, t: number, z: number) {
 }
 
 for (let j: number = 1; j < 5; j++) {
-    let x: number = Math.floor(Math.random() * canvas.width);
-    let y: number = Math.floor(Math.random() * canvas.height);
-    let t: number = Math.floor(Math.random() * canvas.width);
-    let z: number = Math.floor(Math.random() * canvas.height);
+    let x: number = Math.floor(Math.random() * canvas.width / 2);
+    let y: number = Math.floor(Math.random() * canvas.height / 2);
+    let t: number = Math.floor(Math.random() * canvas.width / 2);
+    let z: number = Math.floor(Math.random() * canvas.height / 2);
+    
+    
     fourSquares(x, y, t, z);
 }
 
