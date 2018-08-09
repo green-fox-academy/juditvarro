@@ -4,8 +4,20 @@
 // Your task is to fix it by swapping the right words with code
 // Also, log the sentence to the console with spaces in between.
 // Create a function called quoteSwap().
+
 let words: string[] = ['What', 'I', 'do', 'create,', 'I', 'cannot', 'not', 'understand.'];
+
+function quoteSwap(input: string[]){
+    let tempValue = input[5];
+    input[5] = input[2];
+    input[2] = tempValue;
+    let joined = input.join(' ') 
+    return joined; 
+}
+
 console.log(quoteSwap(words));
+
 // Expected output: "What I cannot create I do not understand."
+
 export = quoteSwap;
 
