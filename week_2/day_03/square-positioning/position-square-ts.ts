@@ -18,7 +18,7 @@ function squareDrawer (x: number, y: number) {
 }
 
 for (let i: number = 1; i < 4; i++) {
-    let x: number = Math.floor(Math.random() * (canvas.height - 50));
+    let x: number = Math.floor(Math.random() * (canvas.width - 50));
     let y: number = Math.floor(Math.random() * (canvas.height - 50));
     squareDrawer(x, y);
 }
