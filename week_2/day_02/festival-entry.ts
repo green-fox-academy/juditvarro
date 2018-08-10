@@ -27,35 +27,22 @@ let safetyList: string[] = [];
 
 function securityCheck(input: any[]) {
     for (let lines: number = 0; lines < input.length; lines++) {
-
-
-        /*
-        if (input[lines].alcohol == 0 && input[lines].guns == 0) {
-            safetyList.push(input[lines].name);
-        } else {
+        if (input[lines].guns > 0) {
             watchlist.push(input[lines].name);
-            if(input[lines].alcohol > 0 && input[lines].guns == 0) {
-                securityAlcoholLoot += input[lines].alcohol;
-                input[lines].alcohol = 0;
-                safetyList.push(input[lines].name);*/
-            }
+        } else if (input[lines].alcohol > 0) {
+            securityAlcoholLoot += input[lines].alcohol;
+            input[lines].alcohol = 0;
+            safetyList.push(input[lines].name);
+        }
+        else {
+            safetyList.push(input[lines].name);
         }
     }
     return safetyList;
 }
 
+
 console.log(securityCheck(queue));
-
-console.log(watchlist);
-
-console.log(securityAlcoholLoot);
-
-console.log(queue);
-
-
-
-
-
 
 
 // Önszorgalom 101: listázni csak a neveket

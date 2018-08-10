@@ -24,7 +24,8 @@ square(100, 'orange'); */
 
 // Rainbow Squares:
 
-let rainbowColors: string[] = ['pink', 'purple', 'blue', 'green', 'yellow', 'orange', 'red'];
+let rainbowColors: string[] = ['pink', 'purple', 'blue',
+    'green', 'yellow', 'orange', 'red'];
 let height: number = canvas.height;
 let distance: number = 20;
 
@@ -40,4 +41,7 @@ function rainbowSquare(t: number, color: string) {
 }
 
 rainbowSquare(height, rainbowColors[0]);
+
+
+
 
