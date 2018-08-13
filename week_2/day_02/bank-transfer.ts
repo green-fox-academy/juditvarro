@@ -24,8 +24,25 @@ const accounts: any[] = [
 //	{ clientName: 'Vladimir', accountNumber: 43546731, balance: 5204099571.23 },
 //	{ clientName: 'Sergei', accountNumber: 23456311, balance: 1354100.0 }
 //]
+
+// PART I.:
+
+function getNameAndBalance(searchedAccount: number){
+  for (let clients: number = 0; clients < accounts.length; clients++) {
+    if (accounts[clients].accountNumber == searchedAccount) {
+      return accounts[clients].clientName + ', ' + accounts[clients].balance;
+    }
+  }
+}
+
+console.log(getNameAndBalance (43546731));
+
+
+
+/*
 export = {
   getNameAndBalance,
   transferAmount,
   accounts
-};
+}
+*/

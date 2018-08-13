@@ -15,11 +15,12 @@ function envelopeDrawer(startingX: number, startingY: number, endingX: number, e
 }
 
 for (let i: number = 0; i < 20; i++) {
-    envelopeDrawer(10 + 10 * i, canvas.height / 2 - (i * 0.5), canvas.width / 2, canvas.height / 2 - 10 - (5 * i * 2));
+    envelopeDrawer(10 + 10 * i, canvas.height / 2 - (i * 0.5), canvas.width / 2, canvas.height / 2 - 10 - (i * 10));
 }
 
 for (let j: number = 0; j < 20; j++) {
-    envelopeDrawer(canvas.width / 2, 10 + 10 * j, canvas.width / 2 + 10 + (5 * j * 2), canvas.height / 2 - 10 + (j * 0.5));
+    envelopeDrawer(canvas.width / 2, 10 + 10 * j, canvas.width / 2 + 10 + (j * 10), 
+    canvas.height / 2 - 10 + (j * 0.5));
 }
 
 for (let k: number = 0; k < 20; k++) {
