@@ -26,7 +26,7 @@ function openerAndPrinter(filenameToRead: string, charCode: string): string {
 
 console.log(openerAndPrinter('my-file.txt', characterEncoding));
 
-// Read the content but if unable than throw an error.
+// Read the content but if unable than throw an error. (It could work with the reader-function above.)
 
 function printerWithError(filenameToRead: string, charCode: string) {
     try {
@@ -37,7 +37,7 @@ function printerWithError(filenameToRead: string, charCode: string) {
         }
     }
     catch (error) {
-     console.log(error.message);
+    console.log(error.message);
     }
 }
 
