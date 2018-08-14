@@ -1,7 +1,7 @@
 declare function require(path: string): any;
 
 'use strict'
-export { };
+export {};
 
 const fs = require('fs');
 const characterEncoding: string = 'utf-8';

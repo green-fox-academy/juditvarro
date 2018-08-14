@@ -43,8 +43,9 @@ console.log(dividerWithError(5));
 function dividerWithErrorShorter(input: number): number {
     if (input == 0) {
         throw new TypeError('fail');
-    }
+    } else {
     return 10 / input;
+    }
 }
 
 try {
