@@ -40,18 +40,17 @@ console.log(dividerWithError(5));
 
 // Solution 3:
 
-function dividerWithErrorShorter(input: number): number {
-    if (input == 0) {
-        throw new TypeError('fail');
-    } else {
-    return 10 / input;
+function dividerWithErrorShorter(input: number) {
+    try {
+        if (input == 0) {
+            throw new TypeError('fail');
+        } else {
+            console.log(10 / input);
+        }
+    }
+    catch (error) {
+        console.log(error.message);
     }
 }
 
-try {
-  console.log(dividerWithErrorShorter(0));
-}
-catch (error) {
-  console.log(error.message);
-}
-
+dividerWithErrorShorter(0);
