@@ -4,7 +4,7 @@
 // should not raise any error.
 
 'use strict'
-export { };
+export {};
 
 declare function require(path: string): any;
 const fs = require('fs');
