@@ -17,7 +17,7 @@ function dividerWithoutExceptions(input: number) {
 dividerWithoutExceptions(0);
 
 
-// Solution 2
+// Solution 2 (with exception: try-method)
 
 function dividerWithError(input: number): number {
     try {
