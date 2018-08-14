@@ -7,19 +7,19 @@
 
 function dividerWithoutExceptions(input: number) {
     if (input == 0) {
-        return 'fail';
+        console.log('fail');
     } else {
         let result: number = 10 / input;
-        return result;
+        console.log(result);
     }
 }
 
-console.log(dividerWithoutExceptions(0));
+dividerWithoutExceptions(0);
 
 
 // Solution 2
 
-function dividerWithExceptions(input: number) {
+function dividerWithError(input: number): number {
     try {
         if (input == 0) {
             throw new TypeError('fail');
@@ -27,13 +27,30 @@ function dividerWithExceptions(input: number) {
     } catch (e) {
         console.log(e.message);
     }
-
     finally {
         if (input != 0) {
             let result: number = 10 / input;
-            console.log(result);
+            return result;
         }
     }
 }
 
-dividerWithExceptions(0);
+console.log(dividerWithError(5));
+
+
+// Solution 3:
+
+function dividerWithErrorShorter(input: number): number {
+    if (input == 0) {
+        throw new TypeError('fail');
+    }
+    return 10 / input;
+}
+
+try {
+  console.log(dividerWithErrorShorter(0));
+}
+catch (error) {
+  console.log(error.message);
+}
+
