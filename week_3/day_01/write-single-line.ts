@@ -15,7 +15,7 @@ function makeNewFile(filename: string, data: string) {
         if (fs.existsSync(filename)){
             fs.writeFileSync(filename, data);
         } else {
-            throw new Error('Unable to write file: my-file2.txt');
+            throw new Error('Unable to write file: my-file.txt');
         }
     } catch (error) {
         console.log(error.message);

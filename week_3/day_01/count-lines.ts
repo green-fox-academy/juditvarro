@@ -4,7 +4,7 @@
 // should not raise any error.
 
 'use strict'
-export {};
+export { };
 
 declare function require(path: string): any;
 const fs = require('fs');
@@ -12,18 +12,17 @@ const characterEncoding: string = 'utf-8';
 
 
 function countLines(filename: string): number {
-  const fileContent: string = fs.readFileSync(filename, characterEncoding);
-  let lineCounter: number = 0;
-  if (fs.existsSync(filename)) {
-      fileContent.split('\r\n').forEach(e => {
-          lineCounter++;
-      })
-      return lineCounter;
-  } else {
-      return 0;
-  }
+    let lineCounter: number = 0;
+    let fileContent: string = '';
+    try {
+        fileContent = fs.readFileSync(filename, characterEncoding);
+    } catch (error) {
+        return 0
+    }
+    let fileContentArray = fileContent.split('\r\n')
+    console.log(fileContentArray.length);
 }
+countLines('my-file.txt');
 
-console.log(countLines('my-file.txt'));
 
 
