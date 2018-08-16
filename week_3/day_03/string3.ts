@@ -7,8 +7,12 @@ function starAdder(text: string): string {
     if (text.length === 1) {
         return text;
     } else {
-        return text[0] + '*' + starAdder(text.slice(1));
+        let string = text[0];
+        if (text.charAt(0) === ' ') {
+            return string = ' ' + starAdder(text.slice(1));
+        } else {
+            return string + '*' + starAdder(text.slice(1));
+        }
     }
 }
-
 console.log(starAdder(newString));
