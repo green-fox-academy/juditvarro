@@ -3,9 +3,12 @@
 'use strict'
 export { };
 
-function numberAdder(maximumNumber: number) {
-  if (maximumNumber < 0) {
-    throw new Error('Please provide a positive integer.')
+function numberAdder(maximumNumber: number): number {
+  if (maximumNumber > 0) {
+    return maximumNumber += numberAdder(maximumNumber - 1);
   } else {
-
+    return 0;
   }
+}
+
+console.log(numberAdder(4));
