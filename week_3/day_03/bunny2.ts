@@ -12,5 +12,4 @@ function bunnyEars(numOfBunnies: number) {
         return 3 + bunnyEars(numOfBunnies - 1);
     }
 }
-
 console.log(bunnyEars(7));
