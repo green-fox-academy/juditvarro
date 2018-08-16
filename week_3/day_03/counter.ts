@@ -15,5 +15,16 @@ function subtraction(maximumNumber: number): number {
     }
   }
 }
-
 subtraction(10);
+
+
+function subtractionTwo(maximumNumber: number) {
+  console.log(maximumNumber);
+  if (maximumNumber > 0) {
+    return subtraction(maximumNumber - 1);
+  } else if (maximumNumber < 0) {
+    throw new Error('bla');
+  }
+}
+
+subtractionTwo(10);
