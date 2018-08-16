@@ -1,15 +1,15 @@
 class BlogPost {
-    private authorName: string;
-    private title: string;
-    private text: string;
-    private publicationDate: string;
-    constructor(title: string, authorName: string, publicationDate: string, text: string) {
-        this.title = title;
-        this.authorName = authorName;
-        this.publicationDate = publicationDate;
-        this.text = text;
-    }
-    
+  private authorName: string;
+  private title: string;
+  private text: string;
+  private publicationDate: string;
+  constructor(title: string, authorName: string, publicationDate: string, text: string) {
+    this.title = title;
+    this.authorName = authorName;
+    this.publicationDate = publicationDate;
+    this.text = text;
+  }
+
 }
 
 let johnDoeText: string = 'Lorem ipsum dolor sit amet.';
