@@ -4,21 +4,6 @@ const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 
 
-
-// // background
-// function background(xCoord: number, yCoord: number){
-// let size: number = canvas.width - (xCoord * 2);
-// ctx.fillStyle = 'yellow';
-// ctx.strokeStyle;
-// ctx.fillRect(xCoord, yCoord, size, size);
-// ctx.strokeRect(xCoord, yCoord, size, size);
-// ctx.fill;
-// }
-
-// background(10, 10);
-
-// six squares
-
 let size: number = canvas.width / 3;
 let period: number = 4;
 let startingX: number = 0;
