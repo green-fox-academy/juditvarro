@@ -12,30 +12,46 @@ const characterEncoding: string = 'utf-8';
 
 let oldArrayContent: string = fs.readFileSync('log.txt', characterEncoding);
 
-function returnUniqueIps(content: string) {
-    let oldArray = content.split('\r\n');
-    let newArray = [];
-    let newArrayWithIps = [];
-    let newArrayWithUniqueIps = [];
+// Part One:
 
-    oldArray.forEach(element => {
-        newArray.push(element.split('  '));
-    });
-    newArray.forEach(element2 => {
-        newArrayWithIps.push(element2[2]);
-    });
+function returnUniqueIps(content: string): any[] {
+  let oldArray: any[] = content.split('\r\n');
+  let newArray: any[] = [];
+  let newArrayWithIps: any[] = [];
+  let newArrayWithUniqueIps: any[] = [];
 
-    newArrayWithIps.forEach(element3 => {
-        if (newArrayWithUniqueIps.indexOf(element3) == -1) {
-            newArrayWithUniqueIps.push(element3)
-        }
-    });
-    return newArrayWithUniqueIps
+  oldArray.forEach(element => {
+    newArray.push(element.split('  '));
+  });
+  newArray.forEach(element2 => {
+    newArrayWithIps.push(element2[2]);
+  });
+  newArrayWithIps.forEach(element3 => {
+    if (newArrayWithUniqueIps.indexOf(element3) == -1) {
+      newArrayWithUniqueIps.push(element3)
+    }
+  });
+  return newArrayWithUniqueIps;
 }
-
 console.log(returnUniqueIps(oldArrayContent));
 
+// Part Two:
 
+function requestRatio(examinedContent: string): any[] {
+  let originalArray = examinedContent.split('\r\n');
+  let newArrayFull: any[] = [];
+  let newArrayWithRatio: any[] = [];
+
+  originalArray.forEach(item => {
+    newArrayFull.push(item.split(' '))
+  })
+
+  newArrayFull.forEach(item2 => {
+    newArrayWithRatio.push(item2[11]);
+  });
+  return newArrayWithRatio;
+}
+console.log(requestRatio(oldArrayContent));
 
 
 

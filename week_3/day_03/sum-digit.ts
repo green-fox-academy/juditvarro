@@ -10,5 +10,5 @@ function addedDigits(numToCount: number): number {
         return remainder;
     }
 }
-
 console.log(addedDigits(2002));
+
