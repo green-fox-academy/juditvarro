@@ -1,6 +1,4 @@
-import { Person } from "./person";
 import { Student } from "./student";
-import { Sponsor } from "./sponsor";
 import { Mentor } from "./mentor";
 
 'use strict'
