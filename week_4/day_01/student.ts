@@ -19,7 +19,7 @@ export class Student extends Person {
   }
 
   introduce(): void {
-    console.log(`Hi, I\'m ${this.name}, a ${this.age} years old
+    console.log(`Hi, I'm ${this.name}, a ${this.age} years old
     ${this.gender}, from ${this.previousOrganization}, who skipped ${this.skippedDays} days from the course already.`);
   }
 

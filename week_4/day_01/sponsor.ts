@@ -15,7 +15,7 @@ export class Sponsor extends Person {
   }
 
   introduce(): void {
-    console.log(`Hi, I\'m ${this.name}, a ${this.age} years old ${this.gender} who represents ${this.company}
+    console.log(`Hi, I'm ${this.name}, a ${this.age} years old ${this.gender} who represents ${this.company}
   and hired ${this.hiredStudents} students so far.`);
   }
 
