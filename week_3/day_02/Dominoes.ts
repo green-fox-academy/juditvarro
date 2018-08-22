@@ -11,8 +11,8 @@ function initializeDominoes(): Domino[] {
   return dominoes;
 }
 
-function print(dominoes: Domino[]) {
-  dominoes.forEach(function (value) {
+function print(inputDominoes: Domino[]) {
+  inputDominoes.forEach(function (value) {
     console.log(value);
   });
 }
@@ -40,4 +40,6 @@ function dominoLiner(examinedArray: Domino[]): any[][] {
 console.log(dominoLiner(dominoes));
 
 
-
+for (let domino of dominoes) {
+  domino.printAllFields();
+}
