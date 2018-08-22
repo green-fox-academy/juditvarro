@@ -14,7 +14,7 @@ export class Reptile extends AnimalsBreedingWithEggs {
   }
 
   breed(): string {
-   return this.breedWithEggs();
+    return this.breedWithEggs();
   }
 
   eat(): void {
@@ -30,8 +30,3 @@ export class Reptile extends AnimalsBreedingWithEggs {
     console.log(`It was time to change my clothes, sorry!- said ${this.name}`);
   }
 }
-
-
-let newRepi: Animal = new Reptile('croc', 8, 'male');
-
-newRepi.breed();

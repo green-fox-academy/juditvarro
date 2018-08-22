@@ -3,7 +3,10 @@ import { Animal } from "./animal";
 'use strict'
 
 export abstract class AnimalsBreedingWithEggs extends Animal {
-  breedWithEggs(): string {
+ 
+  breed(): string {
     return 'laying eggs.';
   }
+
+  abstract eat(): void;
 }

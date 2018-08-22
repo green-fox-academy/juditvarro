@@ -6,10 +6,10 @@ import { Flyable } from "../flyable/flyableInterface";
 'use strict'
 
 export class Bird extends AnimalsBreedingWithEggs implements Flyable {
- 
+
   protected featherStatus: boolean;
   protected weirdLegStatus: boolean;
-  
+
   constructor(name: string, age?: number, gender?: string) {
     super(name, age, gender);
     this.featherStatus = true;
@@ -19,7 +19,7 @@ export class Bird extends AnimalsBreedingWithEggs implements Flyable {
   breed(): string {
     return this.breedWithEggs();
   }
-  
+
   eat(): void {
     this.hunger = false;
   }
