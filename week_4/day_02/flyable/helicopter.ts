@@ -20,8 +20,3 @@ export class Helicopter extends Vehicle implements Flyable {
     console.log(`The ${this.type} has took off at 10 AM.`);
   }
 }
-
-let newHeli: Helicopter = new Helicopter('Apache', 1975, true);
-
-console.log(newHeli);
-newHeli.fly();
