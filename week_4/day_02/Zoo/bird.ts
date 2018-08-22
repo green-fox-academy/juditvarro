@@ -1,9 +1,12 @@
 import { Animal } from "./animal";
 import { AnimalsBreedingWithEggs } from "./breedingwitheggs";
+import { Flyable } from "../flyable/flyableInterface";
+
 
 'use strict'
 
-export class Bird extends AnimalsBreedingWithEggs {
+export class Bird extends AnimalsBreedingWithEggs implements Flyable {
+ 
   protected featherStatus: boolean;
   protected weirdLegStatus: boolean;
   
@@ -28,4 +31,15 @@ export class Bird extends AnimalsBreedingWithEggs {
   feedingFromBeak(): void {
     console.log(`Here you go lil' bird, eat!- said ${this.name}`);
   }
+
+  land(): void {
+    console.log(`Just landed!- said ${this.name}`);
+  }
+  fly(): void {
+    console.log(`I have flown a lot!- said ${this.name}`);
+  }
+  takeoff(): void {
+    console.log(`I'm gonna be free!- said ${this.name}`);
+  }
 }
+
