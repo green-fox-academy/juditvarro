@@ -24,8 +24,3 @@ test('addmethod when there is a null in the array', testing => {
   testing.equal(arrayWithNull.sum(), 0, 'it should match.');
   testing.end();
 });
-
-test('addmethod when there are strings in the array', testing => {
-  testing.equal(arrayWithString.sum(), '0dontworry', 'it should match.');
-  testing.end();
-});

@@ -3,7 +3,7 @@
 export class SumOfNumbers {
   array: number[];
 
-  constructor(array: any[]){
+  constructor(array: number[]){
     this.array = array;
   }
 
