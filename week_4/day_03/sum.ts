@@ -3,7 +3,7 @@
 export class SumOfNumbers {
   array: number[];
 
-  constructor(array: number[]){
+  constructor(array: any[]){
     this.array = array;
   }
 
@@ -16,6 +16,8 @@ export class SumOfNumbers {
   }
 }
 
-let newArray: SumOfNumbers = new SumOfNumbers([1, 7, 4, 8]);
-
-console.log(newArray.sum());
+export let arrayActual: SumOfNumbers = new SumOfNumbers([1, 7, 4, 8]);
+export let arrayWithNoElement: SumOfNumbers = new SumOfNumbers([]);
+export let arrayWithOneElement: SumOfNumbers = new SumOfNumbers([4]);
+export let arrayWithNull: SumOfNumbers = new SumOfNumbers([null]);
+export let arrayWithString: SumOfNumbers = new SumOfNumbers(['dont', 'worry']);
