@@ -72,5 +72,6 @@ typings/
 # Serverless directories
 .serverless
 
+package.json
 
 .gitignore
