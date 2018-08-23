@@ -18,6 +18,8 @@ dominoes.sort(function (a: DominoAgain, b: DominoAgain): number {
   return a.compareTo(b);
 });
 
+console.log(dominoes);
+
 
 
 
