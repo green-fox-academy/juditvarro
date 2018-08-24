@@ -1,4 +1,4 @@
 Judit Varro 
-myfirst GFA repository
+first GFA repository
 
 [MyToDoApp](https://github.com/juditvarro/todo-app)
