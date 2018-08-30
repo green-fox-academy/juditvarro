@@ -10,3 +10,4 @@ export abstract class AnimalsBreedingWithEggs extends Animal {
 
   abstract eat(): void;
 }
+

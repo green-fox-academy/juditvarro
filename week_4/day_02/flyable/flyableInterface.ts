@@ -5,3 +5,4 @@ export interface Flyable {
   fly(): void;
   takeoff(): void;
 }
+
