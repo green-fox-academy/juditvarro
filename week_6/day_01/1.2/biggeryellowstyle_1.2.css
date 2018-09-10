@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 12.5em;
+  height: 12.5em;
+}
+
+.green {
+    background-color: rgb(78, 212, 44);
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+  
+  .yellow {
+    background-color: yellow;
+    flex-grow: 3;
+    flex-shrink: 3;
+  }
+  
+  .purple {
+    background-color: rgba(175, 105, 189, 0.89);
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
