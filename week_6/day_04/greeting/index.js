@@ -7,17 +7,13 @@ const PORT = 3060;
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-  res.render('home', {
-    title: 'Home page', 
-    header: 'Welcome back, Guest!',
-  });
-});
-
-app.get('/:id', (req, res) => {
-  console.log(req.query);
+  let user = 'Guest';
+if(req.query.name){
+    user = req.query.name;
+}
   res.render('home', {
     title: 'Home page',
-    header: `Welcome back, ${req.params.id}!`,
+    header: user,
   })
 });
 
