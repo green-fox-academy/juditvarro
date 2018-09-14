@@ -1,6 +1,7 @@
 body {
   background: lightgrey;
-  height: 96vh;
+  height: 94vh;
+  width: auto;
 }
 
 .container {
@@ -11,15 +12,19 @@ body {
 }
 
 .firstpic {
-  width: 600px;
-  height: 338px;
+  width: 60%;
+  height: 33%;
+  min-width: 160px;
+  min-height: 90px;
 }
 
 .buttonleft {
   padding: 10px;
+  background: whitesmoke;
 }
 
 .buttonright {
   transform: rotate(180deg);
   padding: 10px;
+  background: whitesmoke;
 }
