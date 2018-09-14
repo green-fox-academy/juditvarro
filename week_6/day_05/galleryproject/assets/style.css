@@ -1,0 +1,25 @@
+body {
+  background: lightgrey;
+  height: 96vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.firstpic {
+  width: 600px;
+  height: 338px;
+}
+
+.buttonleft {
+  padding: 10px;
+}
+
+.buttonright {
+  transform: rotate(180deg);
+  padding: 10px;
+}
