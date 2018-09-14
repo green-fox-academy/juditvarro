@@ -9,22 +9,34 @@ body {
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .firstpic {
-  width: 60%;
-  height: 33%;
+  width: 50%;
+  height: 23%;
   min-width: 160px;
   min-height: 90px;
 }
 
-.buttonleft {
-  padding: 10px;
-  background: whitesmoke;
+.descriptionBox {
+  background: rgba(0, 0, 0, 0.247);
+  position: absolute;
+  bottom: 0px;
+  width: 50%;
+  height: 25%;
+  min-width: 160px;
+  min-height: 22px;
+}
+
+.descriptionBox p {
+  color: white;
+  position: relative;
 }
 
 .buttonright {
   transform: rotate(180deg);
-  padding: 10px;
-  background: whitesmoke;
 }
+/* 
+@media screen and (max-width: 894){.descriptionBox p {font-size: 10px}}
+@media screen and (max-width: 500){.descriptionBox p {font-size: 5px}} */
