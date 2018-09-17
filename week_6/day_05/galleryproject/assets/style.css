@@ -32,6 +32,12 @@ body {
 .descriptionBox p {
   color: white;
   position: relative;
+  padding-left: 1em;
+  font-weight: bold;
+}
+
+.descriptionBox p:nth-child(1) {
+ text-transform: uppercase;
 }
 
 .buttonright {
