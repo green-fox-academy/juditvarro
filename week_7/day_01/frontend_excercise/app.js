@@ -42,6 +42,14 @@ app.get('/greeter', (req, res) => {
   }
 })
 
+app.get('/appenda/:word', (req, res) => {
+  if(req.params.word) {
+    res.json({
+      "appended": `${req.params.word}a`
+    })
+  }
+})
+
 app.listen(PORT, () => {
   console.log(`App successfully started and running on ${PORT}.`);
 })
