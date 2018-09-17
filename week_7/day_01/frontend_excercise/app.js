@@ -82,6 +82,35 @@ app.post('/dountil/:action', jsonParser, (req, res) => {
   }
 })
 
+app.post('/arrays', jsonParser, (req, res) => {
+  if (req.body.what === "sum") {
+    let result = 0;
+    req.body.numbers.forEach(element => {
+      result += element;
+    })
+    res.json({
+      "result": `${result}`,
+    })
+  }
+  if (req.body.what === "multiply") {
+    let result = req.body.numbers[0];
+    for (let i = 0; i < req.body.numbers.length; i++) {
+      result = result * req.body.numbers[i];
+    }
+    res.json({
+      "result": `${result}`,
+    })
+  }
+  if (req.body.what === "double") {
+      req.body.numbers = req.body.numbers.map(element => {
+      return element * 2;
+    })
+    res.json({
+      "result": `${req.body.numbers}`,
+    })
+  }
+})
+
 app.listen(PORT, () => {
   console.log(`App successfully started and running on ${PORT}.`);
 })
