@@ -3,6 +3,9 @@
 const express = require('express');
 const app = express();
 
+const bodyParser = require('body-parser');
+const jsonParser = bodyParser.json();
+
 const path = require('path');
 const PORT = 8080;
 
@@ -43,9 +46,38 @@ app.get('/greeter', (req, res) => {
 })
 
 app.get('/appenda/:word', (req, res) => {
-  if(req.params.word) {
+  if (req.params.word) {
     res.json({
       "appended": `${req.params.word}a`
+    })
+  }
+})
+
+function sumOfNum(numUntilSum) {
+  if (numUntilSum > 0) {
+    return numUntilSum += sumOfNum(numUntilSum - 1);
+  } else {
+    return 0;
+  }
+}
+
+function factOfNum(numUntilFact) {
+  if (numUntilFact === 1) {
+    return 1;
+  } else {
+    return numUntilFact * (factOfNum(numUntilFact - 1))
+  }
+}
+
+app.post('/dountil/:action', jsonParser, (req, res) => {
+  if (req.params.action === "sum") {
+    res.json({
+      "result": sumOfNum(req.body.until),
+    })
+  }
+  if (req.params.action === "factor") {
+    res.json({
+      "result": factOfNum(req.body.until),
     })
   }
 })
