@@ -102,11 +102,57 @@ app.post('/arrays', jsonParser, (req, res) => {
     })
   }
   if (req.body.what === "double") {
-      req.body.numbers = req.body.numbers.map(element => {
+    req.body.numbers = req.body.numbers.map(element => {
       return element * 2;
     })
     res.json({
       "result": `${req.body.numbers}`,
+    })
+  } else {
+    res.json({
+      error: "Please provide what to do with the numbers!"
+    })
+  }
+})
+
+function yodaText(stringToChange) {
+  let startingString = stringToChange.toLowerCase();
+  let textToSentenceArray = startingString.split('. ');
+  let textToWordArray = [];
+
+  textToSentenceArray.forEach(element => {
+    textToWordArray.push(element.split(' '));
+  })
+
+  for (let i = 0; i < textToWordArray.length; i++) {
+    for (let k = 0; k < textToWordArray[i].length; k++) {
+      if (k % 2 !== 0) {
+        let tempElement = '';
+        tempElement = textToWordArray[i][k - 1];
+        textToWordArray[i][k - 1] = textToWordArray[i][k];
+        textToWordArray[i][k] = tempElement;
+      }
+    }
+  }
+
+  textToSentenceArray = textToWordArray.map(element => {
+    return element.join(' ');
+  })
+
+  textToSentenceArray[0] = textToSentenceArray[0].replace(textToSentenceArray[0].charAt(0), textToSentenceArray[0].charAt(0).toUpperCase());
+  textToSentenceArray[1] = textToSentenceArray[1].replace(textToSentenceArray[1].charAt(0), textToSentenceArray[1].charAt(0).toUpperCase());
+
+let mumbleWords = ['OMG', 'bla', 'wow', 'err', 'niff', 'brr', 'vau']
+
+  return `${textToSentenceArray[0]}. ${mumbleWords[Math.floor(Math.random() * 6)]}. ${mumbleWords[Math.floor(Math.random() * 6)]}. ${textToSentenceArray[1]}. ${mumbleWords[Math.floor(Math.random() * 6)]}..${mumbleWords[Math.floor(Math.random() * 6)]}..${mumbleWords[Math.floor(Math.random() * 6)]}.`
+}
+
+app.post('/sith', jsonParser, (req, res) => {
+  if (req.body.text) {
+
+  } else {
+    res.json({
+      error: "Please provide what to do with the numbers!"
     })
   }
 })
