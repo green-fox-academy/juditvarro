@@ -142,17 +142,19 @@ function yodaText(stringToChange) {
   textToSentenceArray[0] = textToSentenceArray[0].replace(textToSentenceArray[0].charAt(0), textToSentenceArray[0].charAt(0).toUpperCase());
   textToSentenceArray[1] = textToSentenceArray[1].replace(textToSentenceArray[1].charAt(0), textToSentenceArray[1].charAt(0).toUpperCase());
 
-let mumbleWords = ['OMG', 'bla', 'wow', 'err', 'niff', 'brr', 'vau']
+  let mumbleWords = ['OMG', 'bla', 'wow', 'err', 'niff', 'brr', 'vau']
 
   return `${textToSentenceArray[0]}. ${mumbleWords[Math.floor(Math.random() * 6)]}. ${mumbleWords[Math.floor(Math.random() * 6)]}. ${textToSentenceArray[1]}. ${mumbleWords[Math.floor(Math.random() * 6)]}..${mumbleWords[Math.floor(Math.random() * 6)]}..${mumbleWords[Math.floor(Math.random() * 6)]}.`
 }
 
 app.post('/sith', jsonParser, (req, res) => {
   if (req.body.text) {
-
+    res.json({
+      "sith_text": yodaText(req.body.text),
+    })
   } else {
     res.json({
-      error: "Please provide what to do with the numbers!"
+      error: "Feed me some text you have to, padawan young you are. Hmmm.!",
     })
   }
 })
