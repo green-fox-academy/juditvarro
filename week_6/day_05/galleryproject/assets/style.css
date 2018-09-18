@@ -12,7 +12,7 @@ body {
   position: relative;
 }
 
-.firstpic {
+#firstpic {
   width: 50%;
   height: 23%;
   min-width: 160px;
@@ -40,9 +40,6 @@ body {
  text-transform: uppercase;
 }
 
-.buttonright {
+#buttonNext {
   transform: rotate(180deg);
 }
-/* 
-@media screen and (max-width: 894){.descriptionBox p {font-size: 10px}}
-@media screen and (max-width: 500){.descriptionBox p {font-size: 5px}} */

@@ -2,26 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <script src="index.js"></script>
+    <script type="module" src="/assets/script.js"></script>
     <title>Workshop: beautiful gallery</title>
     <link type="text/css" rel="stylesheet" href="/assets/style.css"/>
   </head>
   <body>
     <h1>This is a beautiful fox-gallery with beautiful foxes</h1>
     <div class="container">
-      <button class="button">
+      <button id="buttonBack">
         <img src="/assets/arrow.svg">
       </button>
       
-      <img class="firstpic" src=<%= picture %>>
+      <img id="firstpic" src=<%= picture %>>
       
       <div class="descriptionBox"> 
         <p> <%= fox %> </p>
         <p> <%= description %> </p>
       </div>
       
-      <button class="button">
-        <img class="buttonright" src="/assets/arrow.svg">
+      <button id="buttonNext">
+        <img src="/assets/arrow.svg">
      </button>
     </div>
   </body>
