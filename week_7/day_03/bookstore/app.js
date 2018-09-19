@@ -34,8 +34,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 })
 
-// app.get('/api/v1/bookname', (req, res) => {
-//   conn.query('SELECT book_name FROM book_mast;', function(err, result) {
+// WITHOUT FILTER:
+
+// app.get('/api/v1/books', (req, res) => {
+//   conn.query('SELECT book_name, aut_name, cate_descrip, pub_name, book_price FROM book_mast INNER JOIN author ON book_mast.aut_id = author.aut_id INNER JOIN category ON book_mast.cate_id = category.cate_id INNER JOIN publisher ON book_mast.pub_id = publisher.pub_id;', function (err, result) {
 //     if (err) {
 //       console.log(err.toString());
 //       res.status(500).send('Database error');
@@ -45,8 +47,38 @@ app.get('/', (req, res) => {
 //   });
 // });
 
+// FILTER TRY:
+
 app.get('/api/v1/books', (req, res) => {
-  conn.query('SELECT book_name, aut_name, cate_descrip, pub_name, book_price FROM book_mast INNER JOIN author ON book_mast.aut_id = author.aut_id INNER JOIN category ON book_mast.cate_id = category.cate_id INNER JOIN publisher ON book_mast.pub_id = publisher.pub_id;', function(err, result) {
+  let basicQuery = 'SELECT book_name, aut_name, cate_descrip, pub_name, book_price FROM book_mast INNER JOIN author ON book_mast.aut_id = author.aut_id INNER JOIN category ON book_mast.cate_id = category.cate_id INNER JOIN publisher ON book_mast.pub_id = publisher.pub_id';
+
+  let titleQuery = req.query.title;
+  let authorQuery = req.query.author;
+  let cateQuery = req.query.category;
+  let publishQuery = req.query.publisher;
+  let priceQuery = req.query.price;
+
+  let queryToSend = '';
+
+  if (titleQuery) {
+    queryToSend = `${basicQuery} WHERE book_name = '${titleQuery}';`
+  }
+  else if (authorQuery) {
+    queryToSend = `${basicQuery} WHERE aut_name = '${authorQuery}'`
+  }
+  else if (cateQuery) {
+    queryToSend = `${basicQuery} WHERE cate_descrip = '${cateQuery}'`
+  }
+  else if (publishQuery) {
+    queryToSend = `${basicQuery} WHERE pub_name = '${publishQuery}'`
+  }
+  else if (priceQuery) {
+    queryToSend = `${basicQuery} WHERE book_price = '${priceQuery}'`
+  } else {
+    queryToSend = basicQuery;
+  }
+
+  conn.query(queryToSend, function (err, result) {
     if (err) {
       console.log(err.toString());
       res.status(500).send('Database error');
@@ -59,4 +91,3 @@ app.get('/api/v1/books', (req, res) => {
 app.listen(PORT, () => {
   console.log(`The app is up and running on ${PORT}.`)
 })
-

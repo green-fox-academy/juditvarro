@@ -3,7 +3,7 @@ window.onload = () => {
   const http = new XMLHttpRequest();
   const bookParent = document.querySelector("#books");
 
-  http.open('GET', `${host}/api/v1/bookname`);
+  http.open('GET', `${host}/api/v1/books`, true);
 
   http.onload = () => {
     if (http.status === 200) {
@@ -34,11 +34,11 @@ window.onload = () => {
       books.forEach(element => {
         
         const tableRowOne = document.createElement('tr');
-        const columnOne = document.createElement('th');
-        const columnTwo = document.createElement('th');
-        const columnThree = document.createElement('th');
-        const columnFour = document.createElement('th');
-        const columnFive = document.createElement('th');
+        const columnOne = document.createElement('td');
+        const columnTwo = document.createElement('td');
+        const columnThree = document.createElement('td');
+        const columnFour = document.createElement('td');
+        const columnFive = document.createElement('td');
 
         columnOne.innerText = element.book_name;
         columnTwo.innerText = element.aut_name;
