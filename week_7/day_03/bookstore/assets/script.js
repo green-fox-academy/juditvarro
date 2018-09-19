@@ -32,7 +32,7 @@ window.onload = () => {
       upperpart.appendChild(upperPartBody);
 
       books.forEach(element => {
-
+        
         const tableRowOne = document.createElement('tr');
         const columnOne = document.createElement('th');
         const columnTwo = document.createElement('th');
