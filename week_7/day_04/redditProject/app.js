@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
 app.use(cors());
-app.use('/assets', express.static('assets'));
+app.use('/assets', express.static('public/assets'));
 
 const mysql = require('mysql');
 const conn = mysql.createConnection({
@@ -29,6 +29,10 @@ conn.connect(function (err) {
 
 app.get('/hello', (req, res) => {
   res.send('hello world');
+})
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/index.html'))
 })
 
 app.get('/posts', (req, res) => {
