@@ -45,19 +45,25 @@ app.get('/posts', (req, res) => {
   })
 })
 
-app.post('/posts', (req, res) => {
-  conn.query('SELECT * FROM posts', (err, result) => {
+app.post('/posts', jsonParser, (req, res) => {
+  let newTitle = `${req.body.title}`;
+  let newURL = `${req.body.url}`;
+  let newOwner = `${req.body.owner}`;
+  let today = new Date(Date.now()).toLocaleString();
+
+  conn.query(`INSERT INTO posts (title, url, timestamp, score, owner, vote) VALUES ('${newTitle}', '${newURL}', '${today}', 0,'${newOwner}', 0);`, (err, result) => {
     if (err) {
       console.log(err.toString());
       res.status(500).send('Database error');
       return;
     }
-    res.json({
-      posts: result,
-    })
+    if (newTitle && newURL && newOwner) {
+      res.json({
+        posts: result,
+      })
+    }
   })
 })
-
 
 app.put('/posts/<id>/upvote', (res, req) => {
 
