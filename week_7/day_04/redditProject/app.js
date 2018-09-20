@@ -27,7 +27,6 @@ conn.connect(function (err) {
   console.log('Connection established.');
 })
 
-
 app.get('/hello', (req, res) => {
   res.send('hello world');
 })
@@ -51,21 +50,36 @@ app.post('/posts', jsonParser, (req, res) => {
   let newOwner = `${req.body.owner}`;
   let today = new Date(Date.now()).toLocaleString();
 
-  conn.query(`INSERT INTO posts (title, url, timestamp, score, owner, vote) VALUES ('${newTitle}', '${newURL}', '${today}', 0,'${newOwner}', 0);`, (err, result) => {
-    if (err) {
-      console.log(err.toString());
-      res.status(500).send('Database error');
-      return;
-    }
-    if (newTitle && newURL && newOwner) {
+  if (newTitle && newURL && newOwner) {
+    conn.query(`INSERT INTO posts (title, url, timestamp, score, owner, vote) VALUES ('${newTitle}', '${newURL}', '${today}', 0,'${newOwner}', 0);`, (err, result) => {
+      if (err) {
+        console.log(err.toString());
+        res.status(500).send('Database error');
+        return;
+      }
+      conn.query(`SELECT * FROM posts WHERE id = ${result.insertId};`, (err, resulter) => {
+        if (err) {
+          console.log(err.toString());
+          res.status(500).send('Database error');
+          return;
+        }
+        res.json({
+          posts: resulter,
+        })
+      })
+    })
+  }
+})
+
+app.put('/posts/:id/upvote', (res, req) => {
+
+  app.get('/appenda/:word', (req, res) => {
+    if (req.params.word) {
       res.json({
-        posts: result,
+        "appended": `${req.params.word}a`
       })
     }
   })
-})
-
-app.put('/posts/<id>/upvote', (res, req) => {
 
 })
 
