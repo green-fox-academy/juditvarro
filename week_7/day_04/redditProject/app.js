@@ -81,13 +81,13 @@ app.put('/posts/:id/upvote', jsonParser, (req, res) => {
       res.status(500).send('Database error');
       return;
     }
-  conn.query(`UPDATE posts SET vote = 1 WHERE id = ${votedId};`, (err2, result2) => {
+    conn.query(`UPDATE posts SET vote = 1 WHERE id = ${votedId};`, (err2, result2) => {
       if (err2) {
         console.log(err2.toString());
         res.status(500).send('Database error');
         return;
       }
-  conn.query(`SELECT * FROM posts WHERE id = ${votedId};`, (err3, result3) => {
+      conn.query(`SELECT * FROM posts WHERE id = ${votedId};`, (err3, result3) => {
         if (err) {
           console.log(err3.toString());
           res.status(500).send('Database error');
@@ -102,10 +102,35 @@ app.put('/posts/:id/upvote', jsonParser, (req, res) => {
   })
 })
 
+app.put('/posts/:id/downvote', jsonParser, (req, res) => {
 
+  let votedId = req.params.id;
 
-app.put('/posts/<id>/downvote', (res, req) => {
-
+  conn.query(`UPDATE posts SET score = score - 1 WHERE id = ${votedId};`, (err, result) => {
+    if (err) {
+      console.log(err.toString());
+      res.status(500).send('Database error');
+      return;
+    }
+    conn.query(`UPDATE posts SET vote = -1 WHERE id = ${votedId};`, (err2, result2) => {
+      if (err2) {
+        console.log(err2.toString());
+        res.status(500).send('Database error');
+        return;
+      }
+      conn.query(`SELECT * FROM posts WHERE id = ${votedId};`, (err3, result3) => {
+        if (err) {
+          console.log(err3.toString());
+          res.status(500).send('Database error');
+          return;
+        } else {
+          res.status(200).json({
+            posts: result3,
+          })
+        }
+      })
+    })
+  })
 })
 
 app.listen(PORT, () => {
