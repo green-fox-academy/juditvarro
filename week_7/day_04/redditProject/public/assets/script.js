@@ -14,12 +14,30 @@ window.onload = () => {
       postList.posts.forEach(element => {
        
         let separatePost = document.createElement("div");
-        let link = document.createElement("a");
+        separatePost.classList = "post";
+        let upvote = document.createElement("img");
+        upvote.setAttribute("src", "assets/img/upvote.png");
+        let downvote = document.createElement("img");
+        downvote.setAttribute("src", "assets/img/downvote.png");
+        // let upvoted = document.createElement("img");
+        // let upvoted = document.createElement("img");
+
+        let scoreNum = document.createElement("div");
+        scoreNum.innerHTML = element.score;
+        scoreNum.classList = "score";
         
-        link.setAttribute('href', element.url);
+        let link = document.createElement("a");
+        link.setAttribute("href", element.url);
         link.innerHTML = element.title;
 
+        let timeOfPost = document.createElement("p");
+        timeOfPost.innerText = `submitted ${element.timestamp} by ${element.owner}`;
+        
+        separatePost.appendChild(upvote);
+        separatePost.appendChild(scoreNum);
+        separatePost.appendChild(downvote);
         separatePost.appendChild(link);
+        separatePost.append(timeOfPost);
         pageParent.appendChild(separatePost);
       });
     }
