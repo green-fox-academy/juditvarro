@@ -3,14 +3,15 @@
 window.onload = () => {
   const host = 'http://localhost:8084';
   const http = new XMLHttpRequest();
-  const pageParent = document.querySelector('#content');
+  const pageParent = document.querySelector('#maincontent');
+  const pageMainChild = document.querySelector('#content');
   
   http.open('GET', `${host}/posts`, true);
 
   http.onload = () => {
     if(http.status === 200) {
       const postList = JSON.parse(http.response);
-     
+
       postList.posts.forEach(element => {
     
         let separateContainers = document.createElement("div");
@@ -46,7 +47,7 @@ window.onload = () => {
 
         let timeOfPost = document.createElement("p");
         timeOfPost.innerText = `submitted ${timeWithoutDay} by ${element.owner}`;
-        
+                
         upvote.appendChild(upVoteImg);
         downvote.appendChild(downVoteImg);
 
@@ -60,7 +61,9 @@ window.onload = () => {
         separateContainers.appendChild(voter);
         separateContainers.appendChild(separatePostContent);
         separatePost.appendChild(separateContainers);
-        pageParent.appendChild(separatePost);
+
+        pageMainChild.appendChild(separatePost);
+        pageParent.appendChild(pageMainChild);
       });
     }
   }
