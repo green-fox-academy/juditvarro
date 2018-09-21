@@ -52,7 +52,7 @@ app.post('/posts', jsonParser, (req, res) => {
   let newTitle = `${req.body.title}`;
   let newURL = `${req.body.url}`;
   let newOwner = `${req.body.owner}`;
-  let today = new Date(Date.now()).toLocaleString();
+  let today = new Date(Date.now()).toLocaleDateString();
 
   if (newTitle && newURL && newOwner) {
     conn.query(`INSERT INTO posts (title, url, timestamp, score, owner, vote) VALUES ('${newTitle}', '${newURL}', '${today}', 0,'${newOwner}', 0);`, (err, result) => {

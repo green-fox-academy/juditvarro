@@ -15,7 +15,9 @@ body {
   width: auto;
   height: 200px;
   position: relative;
-  margin: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -36,25 +38,60 @@ body {
   font-family: "lato";
 }
 
+#content {
+  float: inline-start;
+  left: 30px;
+}
+
 .container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: space-between;
+  flex-direction: row;
+  justify-content: flex-start;
   flex-wrap: wrap;
-}
-
-.post {
-  background: rgba(231, 235, 231, 0.979);
+  background: rgba(231, 235, 231, 0.885);
   font-family: lato;
   font-weight: bold;
+  margin: 5px;
+  margin-left: 20px;
+  width: 55%;
 }
 
-.post > a {
+.voter {
+  font-family: lato;
+  font-weight: bold;
+  background: white;
+  align-self: center;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  margin: 5px;
+  box-sizing: border-box;
+  border: none;
+}
+
+buttonUp {
+  background: transparent;
+}  
+
+.score {
+  font-family: lato;
+  font-weight: bold;
+  color: rgb(134, 131, 131);
+  align-self: center;
+}
+
+.postcontent {
+  justify-content: center;
+  width: auto;
+  padding: 5px;
+  margin: 5px;
+}
+
+a {
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
 
-.post > p {
+p {
   color: rgb(134, 131, 131);
 }
