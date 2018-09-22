@@ -4,8 +4,6 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const fetch = require('node-fetch');
-// const bodyParser = require('body-parser');
-// const jsonParser = bodyParser.json();
 const PORT = 3060;
 const apiKey = 'JLJWmt7LsNZM4XXzjgixgjUBGhIfHgvw';
 
@@ -19,7 +17,7 @@ app.get('/api/giphy/:q', (req, res) => {
   let url = [
     `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}`,
     `&q=${req.params.q}`,
-    `&limit=16&offset=0&rating=G&lang=en`,
+    `&limit=30&offset=0&rating=G&lang=en`,
   ].join('');
 
   fetch(url)

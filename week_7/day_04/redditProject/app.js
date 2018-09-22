@@ -48,7 +48,7 @@ app.get('/posts', (req, res) => {
   })
 })
 
-app.post('/posts', jsonParser, (req, res) => {
+app.post('/posts', jsonParser, (res, req) => {
   let newTitle = `${req.body.title}`;
   let newURL = `${req.body.url}`;
   let newOwner = `${req.body.owner}`;
