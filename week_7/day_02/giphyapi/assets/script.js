@@ -36,15 +36,25 @@ window.onload = () => {
         gifImg.setAttribute('height', "150");
 
         gifButton.onclick = () => {
-          if(gifImg.className === "clear") {
-              gifImg.className = "blurry";
+          if (gifImg.className === "clear") {
+            gifImg.className = "blurry";
           } else {
             gifImg.className = "clear";
           }
         }
 
         showAll.onclick = () => {
-          
+          let buttons = document.querySelectorAll(".blurry");
+          Array.from(buttons).forEach(itemOne => {
+              itemOne.className = "clear";
+          })
+        }
+
+        hideAll.onclick = () => {
+          let buttons = document.querySelectorAll(".clear");
+          Array.from(buttons).forEach(itemTwo => {
+              itemTwo.className = "blurry";
+          })
         }
 
         gifButton.appendChild(gifImg);
