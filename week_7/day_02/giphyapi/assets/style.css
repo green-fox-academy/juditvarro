@@ -11,6 +11,7 @@ html, body {
 
 #pagetitle {
   font-family: "Gill Sans MT";
+  
   background: rgba(214, 253, 183, 0.87);
   padding: 20px;
   margin: 10px;
@@ -20,19 +21,54 @@ html, body {
   flex-wrap: wrap;
   width: auto;
   letter-spacing: 0.3em;
+  border: 20px solid rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+}
+
+h1 {
+  font-weight: bolder;
 }
 
 #giphys {
+  vertical-align: middle;
   display: flex;
   flex-direction: row;
   justify-content: center;
   justify-items: center;
   align-self: center;
   padding: 10px;
-  margin: 10px;
+  margin: 0 auto;
   width: 80%;
-  position: absolute;
   flex-wrap: wrap;
+}
+
+#showallbuttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.showall {
+  margin-left: 10px;
+  margin-top: 20px;
+  background: rgba(214, 253, 183, 0.87);
+  padding: 10px;
+  font-family: "Gill Sans MT";
+  font-size: 20px;
+  position: relative;
+  border-radius: 5px;
+}
+
+.hideall {
+  margin-right: 10px;
+  margin-top: 20px;
+  background: rgba(214, 253, 183, 0.87);
+  padding: 10px;
+  font-family: "Gill Sans MT";
+  font-size: 20px;
+  position: relative;
+  border-radius: 5px;
 }
 
 .giphypack {
@@ -40,5 +76,6 @@ html, body {
 }
 
 img.blurry {
-  opacity: 0.1;
+  background: rgba(214, 253, 183, 0.87);
+  opacity: 0;
 }
