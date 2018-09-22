@@ -42,12 +42,16 @@ body {
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
-  margin: 20px;
-  justify-content: flex-end;
+  margin-right: 100px;
+  justify-content: space-between;
 }
 
 #content {
-  width: 500px;
+  margin-top: 30px;
+}
+
+.post {
+  width: 120%;
 }
 
 .container {
@@ -59,7 +63,7 @@ body {
   font-family: "lato";
   margin: 5px;
   margin-left: 100px;
-  width: 500px;
+  width: auto;
 }
 
 
@@ -104,6 +108,7 @@ p {
   width: 50%;
   align-self: baseline;
   margin-left: 100px;
+  margin-top: 30px;
 }
 
 #container-submit>button {
