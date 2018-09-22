@@ -74,10 +74,6 @@ body {
   border: none;
 }
 
-buttonUp {
-  background: transparent;
-}
-
 .score {
   font-family: "lato";
   font-weight: bold;

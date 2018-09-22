@@ -5,18 +5,18 @@ window.onload = () => {
   const http = new XMLHttpRequest();
   const pageParent = document.querySelector('#maincontent');
   const pageMainChild = document.querySelector('#content');
-  
+
   http.open('GET', `${host}/posts`, true);
 
   http.onload = () => {
-    if(http.status === 200) {
+    if (http.status === 200) {
       const postList = JSON.parse(http.response);
 
       postList.posts.forEach(element => {
-    
+
         let separateContainers = document.createElement("div");
         separateContainers.className = "container";
-       
+
         let separatePost = document.createElement("div");
         separatePost.className = "post";
 
@@ -38,7 +38,7 @@ window.onload = () => {
         let scoreNum = document.createElement("div");
         scoreNum.innerHTML = element.score;
         scoreNum.className = "score";
-        
+
         let link = document.createElement("a");
         link.setAttribute("href", element.url);
         link.innerHTML = element.title;
@@ -47,7 +47,7 @@ window.onload = () => {
 
         let timeOfPost = document.createElement("p");
         timeOfPost.innerText = `submitted ${timeWithoutDay} by ${element.owner}`;
-                
+
         upvote.appendChild(upVoteImg);
         downvote.appendChild(downVoteImg);
 
@@ -64,6 +64,20 @@ window.onload = () => {
 
         pageMainChild.appendChild(separatePost);
         pageParent.appendChild(pageMainChild);
+
+        upvote.onclick = () => {
+          upVoteImg.setAttribute("src", "assets/img/upvoted.png");
+          upvote.addEventListener("mouseout", function (eventOne) {
+            eventOne.target.setAttribute("src", "assets/img/upvote.png");
+          })
+        }
+
+        downvote.onclick = () => {
+          downVoteImg.setAttribute("src", "assets/img/downvoted.png");
+          downvote.addEventListener("mouseout", function (eventTwo) {
+            eventTwo.target.setAttribute("src", "assets/img/downvote.png");
+          })
+        }
       });
     }
   }
