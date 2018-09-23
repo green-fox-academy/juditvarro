@@ -88,7 +88,6 @@ body {
 .postcontent {
   justify-content: center;
   width: auto;
-  padding: 5px;
   margin: 5px;
 }
 
@@ -140,3 +139,4 @@ p {
   text-align: justify;
   padding: 10px;
 }
+

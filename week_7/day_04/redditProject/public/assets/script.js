@@ -48,6 +48,10 @@ window.onload = () => {
         let timeOfPost = document.createElement("p");
         timeOfPost.innerText = `submitted ${timeWithoutDay} by ${element.owner}`;
 
+        let hidePost = document.createElement('p');
+        hidePost.className = 'posthider';
+        hidePost.innerText = 'hide this post';
+
         upvote.appendChild(upVoteImg);
         downvote.appendChild(downVoteImg);
 
@@ -57,6 +61,7 @@ window.onload = () => {
 
         separatePostContent.appendChild(link);
         separatePostContent.appendChild(timeOfPost);
+        separatePostContent.appendChild(hidePost);
 
         separateContainers.appendChild(voter);
         separateContainers.appendChild(separatePostContent);
@@ -71,13 +76,19 @@ window.onload = () => {
             eventOne.target.setAttribute("src", "assets/img/upvote.png");
           })
         }
-
+  
         downvote.onclick = () => {
           downVoteImg.setAttribute("src", "assets/img/downvoted.png");
           downvote.addEventListener("mouseout", function (eventTwo) {
             eventTwo.target.setAttribute("src", "assets/img/downvote.png");
           })
         }
+
+        hidePost.addEventListener("click", function(e){
+          if ("clicked") {
+            hidePost.parentElement.parentElement.style.display = "none";
+          }
+        })
       });
     }
   }
