@@ -76,7 +76,7 @@ window.onload = () => {
             eventOne.target.setAttribute("src", "assets/img/upvote.png");
           })
         }
-  
+
         downvote.onclick = () => {
           downVoteImg.setAttribute("src", "assets/img/downvoted.png");
           downvote.addEventListener("mouseout", function (eventTwo) {
@@ -84,11 +84,21 @@ window.onload = () => {
           })
         }
 
-        hidePost.addEventListener("click", function(e){
+        hidePost.addEventListener("click", function (e) {
           if ("clicked") {
-            hidePost.parentElement.parentElement.style.display = "none";
+            hidePost.parentElement.style.display = "none";
+            let showPost = document.createElement('p');
+            showPost.className = 'postshower';
+            showPost.innerText = 'show this post again';
+            separateContainers.appendChild(showPost);
+            showPost.addEventListener("click", function (e) {
+                if("clicked") {
+                  hidePost.parentElement.style.display = "initial";
+                  separateContainers.removeChild(showPost);
+                }
+              })
           }
-        })
+        });
       });
     }
   }
