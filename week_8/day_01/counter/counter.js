@@ -12,5 +12,5 @@ counter.addEventListener("click", function() {
   for (let i = 0; i < list.length; i++) {
     result += 1;
   }
-  resultLogged.innerText = `${result}`;
+  resultLogged.innerText = `There are ${result} items on the list.`;
 }); 
