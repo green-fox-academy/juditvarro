@@ -15,10 +15,20 @@ let buyLollypops = document.querySelector(".buy-lollypops");
 let candyMachine = document.querySelector(".candy-machine");
 
 const gimmeCandy = (event) => {
-  let startingNo = parseInt(candies.innerHTML);
-  let upWithOne = startingNo + 1;
-  candies.innerHTML = `${upWithOne}`;
+  let startingCandies = parseInt(candies.innerHTML);
+  candies.innerHTML = `${startingCandies + 1}`;
+}
+
+const buyLollypop = (event) => {
+  let startingCandies = parseInt(candies.innerHTML);
+  let startingLollypops = lollypops.innerHTML;
+  if (startingCandies >= 100) { 
+    candies.innerHTML = `${startingCandies - 100}`;
+    startingLollypops += "🍭";
+    lollypops.innerHTML = startingLollypops;
+  }
 }
 
 createCandies.addEventListener("click", gimmeCandy);
+buyLollypops.addEventListener("click", buyLollypop);
 
