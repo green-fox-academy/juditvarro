@@ -22,13 +22,34 @@ const gimmeCandy = (event) => {
 const buyLollypop = (event) => {
   let startingCandies = parseInt(candies.innerHTML);
   let startingLollypops = lollypops.innerHTML;
-  if (startingCandies >= 100) { 
+  if (startingCandies >= 100) {
     candies.innerHTML = `${startingCandies - 100}`;
     startingLollypops += "🍭";
     lollypops.innerHTML = startingLollypops;
   }
 }
 
+const candyGenerator = () => {
+  let startingLollypops = lollypops.innerHTML;
+  let starter = startingLollypops.length / 2;
+  let startingCandies = parseInt(candies.innerHTML);
+  if (starter >= 10) {
+    candies.innerHTML = `${startingCandies + 1}`;
+  }
+}
+
+const speeder = () => {
+  let currentLolly = (lollypops.innerHTML).length / 2;
+  let ratio = 1000 / (currentLolly / 10);
+  return ratio;
+}
+
+speed.innerHTML = speeder() / 1000;
+
+const candyGeneratorTimed = (function() {setInterval(function() {candyGenerator()}, speeder())});
+
 createCandies.addEventListener("click", gimmeCandy);
 buyLollypops.addEventListener("click", buyLollypop);
+candyGeneratorTimed();
+
 
