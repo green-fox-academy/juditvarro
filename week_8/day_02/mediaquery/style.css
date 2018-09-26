@@ -1,0 +1,34 @@
+body {
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  width: 800px;
+  height: 200px;
+  margin: 0;
+}
+
+.one {
+  background: lightgreen;
+  width: 25%;
+}
+
+.two {
+  background: yellow;
+  width: 50%;
+}
+
+.three {
+  background: purple;
+  width: 25%;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    flex-wrap: wrap;
+  } 
+  .box {
+    min-width: 100%;
+  }
+}
