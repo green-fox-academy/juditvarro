@@ -41,34 +41,42 @@ body {
 }
 
 .button:hover {
- 
+ filter: brightness(110%);
 }
 
 .button:active {
-  opacity: 0.8;
+  filter: brightness(90%);
+  outline: none;
+  border: none;
 }
 
 .blue {
   background: rgb(73, 73, 177);
+  box-shadow: inset 0 -3px rgba(0, 0, 0, 0.5);
 }
 
 .green {
   background: rgb(25, 145, 25);
+  box-shadow: inset 0 -3px rgba(0, 0, 0, 0.5);
 }
 
 .red {
   background: rgb(207, 28, 28);
+  box-shadow: inset 0 -3px rgba(0, 0, 0, 0.5);
 }
 
 .light {
   background: rgb(61, 174, 240);
+  box-shadow: inset 0 -3px rgba(0, 0, 0, 0.5);
 }
 
 .black {
   background: black;
+  box-shadow: inset 0 -3px rgba(0, 0, 0, 0.5);
 }
 
 .white {
-  background: white;
+  background: #ffffff;
   color: black;
+  box-shadow: inset 0 -3px rgba(0, 0, 0, 0.5);
 }
