@@ -1,0 +1,74 @@
+body {
+  background: rgb(28, 28, 109);
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.container firstrow {
+  display: flex;
+  flex-direction: row;
+}
+
+.container secondrow {
+  display: flex;
+  flex-direction: row;
+}
+
+.button {
+  border: none;
+  margin: 20px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  color: white;
+  border-radius: 4px;
+  width: 150px;
+  height: 60px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.button:hover {
+ 
+}
+
+.button:active {
+  opacity: 0.8;
+}
+
+.blue {
+  background: rgb(73, 73, 177);
+}
+
+.green {
+  background: rgb(25, 145, 25);
+}
+
+.red {
+  background: rgb(207, 28, 28);
+}
+
+.light {
+  background: rgb(61, 174, 240);
+}
+
+.black {
+  background: black;
+}
+
+.white {
+  background: white;
+  color: black;
+}
