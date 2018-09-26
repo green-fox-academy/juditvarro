@@ -46,12 +46,14 @@ body {
 
 .button:active {
   filter: brightness(90%);
+}
+
+.button:focus {
   outline: none;
-  border: none;
 }
 
 .blue {
-  background: rgb(73, 73, 177);
+  background: rgb(81, 81, 182);
   box-shadow: inset 0 -3px rgba(0, 0, 0, 0.5);
 }
 
