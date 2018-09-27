@@ -18,8 +18,21 @@ window.onload = () => {
     }
   })
 
-  
+  firstButtons.addEventListener("change", (event) => {
+    let checkedRadio = document.querySelector("input[id=no]").checked;
+     
+    if(event.target.id === "viktor" && checkedRadio != false) {
+      submitButton.disabled = false;
+    }
+  })
 
+  secondButtons.addEventListener("change", (event) => {
+    let checkedRadio = document.querySelector("input[id=viktor]").checked;
+     
+    if(event.target.id === "no" && checkedRadio != false) {
+      submitButton.disabled = false;
+    }
+  })
 
   submitButton.addEventListener("click", (event) => {
     alert("Thank you, you have successfully signed up!")
