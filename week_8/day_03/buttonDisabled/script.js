@@ -1,6 +1,5 @@
 window.onload = () => {
 
-  const form = document.querySelector("#formhandler");
   const firstButtons = document.querySelector(".first_set");
   const secondButtons = document.querySelector(".second_set");
   const submitButton = document.querySelector("button[type=submit]");

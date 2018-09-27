@@ -14,27 +14,30 @@
   <form>
     <fieldset>
       <legend>Movie selector</legend>
-      <div class="dropdown">
+      <div class="dropdown_genre">
         <select size="1" id="genre" name="movie_genre">
           <option value="Sci-fi">Sci-fi</option>
           <option value="Drama">Drama</option>
           <option value="Comedy">Comedy</option>
         </select>
+        </div>
+        <div class="dropdown_film">
         <select size="1" id="film" name="movie_title">
-          <option value="Sci-fi">Moon</option>
-          <option value="Sci-fi">2001 Space odessy</option>
-          <option value="Sci-fi">Contact</option>
-          <option value="Drama">Darkest hour</option>
-          <option value="Drama">There will be blood</option>
-          <option value="Drama">American beauty</option>
-          <option value="Comedy">Airplane!</option>
-          <option value="Comedy">Deadpool</option>
-          <option value="Comedy">Wayne's World</option>
+          <option disabled="disabled" type="movie" class="Sci-fi" title="Moon">Moon</option>
+          <option disabled="disabled" type="movie" class="Sci-fi" title="2001 Space odessy">2001 Space odessy</option>
+          <option disabled="disabled" type="movie" class="Sci-fi" title="Contact">Contact</option>
+          <option disabled="disabled" type="movie" class="Drama" title="Darkest hour">Darkest hour</option>
+          <option disabled="disabled" type="movie" class="Drama" title="There will be blood">There will be blood</option>
+          <option disabled="disabled" type="movie" class="Drama" title="American beauty">American beauty</option>
+          <option disabled="disabled" type="movie" class="Comedy" title="Airplane!">Airplane!</option>
+          <option disabled="disabled" type="movie" class="Comedy" title="Deadpool">Deadpool</option>
+          <option disabled="disabled" type="movie" class="Comedy" title="Wayne's World">Wayne's World</option>
         </select>
       </div>
       <div class="selectedMovie">
         <h4>The selected movie is:<h4>
-            <p></p>
+            <ul class="list">
+            </ul>
       </div>
     </fieldset>
   </form>
