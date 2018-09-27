@@ -79,10 +79,11 @@ window.onload = () => {
 
         downvote.onclick = () => {
           downVoteImg.setAttribute("src", "assets/img/downvoted.png");
-          downvote.addEventListener("mouseout", function (eventTwo) {
-            eventTwo.target.setAttribute("src", "assets/img/downvote.png");
-          })
         }
+
+        downvote.addEventListener("mouseout", function (eventTwo) {
+          eventTwo.target.setAttribute("src", "assets/img/downvote.png");
+        })
 
         hidePost.addEventListener("click", function (e) {
           if ("clicked") {
