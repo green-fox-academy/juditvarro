@@ -7,7 +7,6 @@ html {
 body {
   width: auto;
   height: 94vh;
-  
 }
 
 #upper {
@@ -44,28 +43,49 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 fieldset {
   border: none;
   background: rgba(231, 235, 231, 0.885);
-  margin: 30px;
   padding: 50px;
-  width: 50%;
-  height: 50%;
+  padding-bottom: 30px;
+  width: 80%;
+  height: 80%;
   font-family: "lato";
+  margin: 20px;
 }
 
 input {
-  margin: 15px;
+  margin: 10px;
   font-family: "lato";
+  width: 85%;
 }
 
 legend {
   font-weight: bolder;
+  margin-bottom: 20px;
+  font-size: 20px;
 }
 
 input:focus {
   outline: none;
   border-color: lightgreen;
+}
+
+button {
+  border: none;
+  font-family: "lato";
+  font-size: 15px;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  letter-spacing: 2px;
+  float: right;
+  margin-top: 20px;
+  font-weight: bolder;
+  border-radius: 15px;
 }
