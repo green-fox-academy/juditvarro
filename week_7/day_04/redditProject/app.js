@@ -11,6 +11,9 @@ const jsonParser = bodyParser.json();
 app.use(cors());
 app.use('/assets', express.static('public/assets'));
 
+app.use(bodyParser.urlencoded( { extended : false } ));
+app.use(bodyParser.json());
+
 const mysql = require('mysql');
 const conn = mysql.createConnection({
   host: 'localhost',
@@ -52,10 +55,13 @@ app.get('/posts', (req, res) => {
   })
 })
 
-app.post('/posts', jsonParser, (res, req) => {
-  let newTitle = `${req.body.title}`;
-  let newURL = `${req.body.url}`;
-  let newOwner = `${req.body.owner}`;
+app.post('/posts', (req, res) => {
+
+  console.log(req.body);
+  
+  let newTitle = req.body.submit[0];
+  let newURL = req.body.submit[1];
+  let newOwner = req.body.submit[2];
   let today = new Date(Date.now()).toLocaleDateString();
 
   if (newTitle && newURL && newOwner) {
