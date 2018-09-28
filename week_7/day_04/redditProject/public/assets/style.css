@@ -151,3 +151,17 @@ p {
 .postshower {
   cursor: pointer;
 }
+
+#container-submit>button:focus {
+  outline: none;
+  filter: brightness(300%);
+  outline: rgb(96, 187, 96);
+}
+
+#container-submit>button:hover {
+  filter: brightness(300%);
+}
+
+#container-submit>button:active {
+  outline: none;
+}

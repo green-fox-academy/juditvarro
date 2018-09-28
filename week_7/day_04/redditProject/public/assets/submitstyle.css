@@ -89,3 +89,16 @@ button {
   font-weight: bolder;
   border-radius: 15px;
 }
+button:focus {
+  outline: none;
+  filter: brightness(300%);
+  outline: rgb(96, 187, 96);
+}
+
+button:hover {
+  filter: brightness(300%);
+}
+
+button:active {
+  outline: none;
+}

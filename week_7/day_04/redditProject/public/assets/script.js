@@ -5,6 +5,7 @@ window.onload = () => {
   const http = new XMLHttpRequest();
   const pageParent = document.querySelector('#maincontent');
   const pageMainChild = document.querySelector('#content');
+  const submitButton = document.querySelector("button[type=submit]");
 
   http.open('GET', `${host}/posts`, true);
 
@@ -100,6 +101,10 @@ window.onload = () => {
               })
           }
         });
+      
+        submitButton.addEventListener("click", function (event) {
+          location.href = `${host}/submit`;
+        })
       });
     }
   }
