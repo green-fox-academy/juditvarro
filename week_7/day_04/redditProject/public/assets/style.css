@@ -240,3 +240,21 @@ button[name="postshower"]:active {
   filter: brightness(150%);
   border: rgb(96, 187, 96);
 }
+
+button[name="posthider"]:focus {
+  outline: none;
+  filter: brightness(150%);
+  border-color: rgb(96, 187, 96);
+}
+
+button[name="delete"]:focus {
+  outline: none;
+  filter: brightness(150%);
+  border: rgb(96, 187, 96);
+}
+
+button[name="postshower"]:focus {
+  outline: none;
+  filter: brightness(150%);
+  border: rgb(96, 187, 96);
+}

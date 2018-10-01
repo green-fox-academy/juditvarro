@@ -99,15 +99,21 @@ window.onload = () => {
             showPost.innerText = 'show this post again';
             separateContainers.appendChild(showPost);
             showPost.addEventListener("click", function (e) {
-                if("clicked") {
-                  hidePost.parentElement.style.display = "initial";
-                  separateContainers.removeChild(showPost);
-                }
-              })
+              if ("clicked") {
+                hidePost.parentElement.style.display = "initial";
+                separateContainers.removeChild(showPost);
+              }
+            })
           }
         });
 
-        
+        deletePost.addEventListener("click", function (e) {
+          fetch(`${host}/posts/${element.id}`, {
+            method: "delete",
+          })  
+          .then(location.href = `${host}`)
+        })
+
         submitButton.addEventListener("click", function (event) {
           location.href = `${host}/submit`;
         })

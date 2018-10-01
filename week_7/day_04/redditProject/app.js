@@ -6,6 +6,7 @@ const PORT = 8084;
 const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+
 // const jsonParser = bodyParser.json();
 
 app.use(cors());
@@ -89,12 +90,11 @@ app.delete('/posts/:id', (req, res) => {
   conn.query(`DELETE FROM posts WHERE id = ${idToDelete};`, (err, result) => {
     if(err) {
       console.log(err.toString());
-      res.status(500).send('Database error');
+      res.status(500).json({ error: 'Database error'});
       return;
     } else {
-      res.status(200).json({
-        posts: result,
-      })
+      res.status(200);
+      console.log(idToDelete);
     }
   })
 })
