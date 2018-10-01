@@ -66,7 +66,7 @@ app.post('/posts', (req, res) => {
   let today = new Date(Date.now()).toLocaleDateString();
 
   if (newTitle && newURL && newOwner) {
-    conn.query(`INSERT INTO posts (title, url, timestamp, score, owner, vote) VALUES ('${newTitle}', '${newURL}', '${today}', 0,'${newOwner}', 0);`, (err, result) => {
+    conn.query('INSERT INTO posts (title, url, timestamp, score, owner, vote) VALUES (?, ?, ?, 0, ?, 0);', [newTitle, newURL, today, newOwner], (err, result) => {
       if (err) {
         console.log(err.toString());
         res.status(500).send('Database error');

@@ -111,13 +111,15 @@ window.onload = () => {
           fetch(`${host}/posts/${element.id}`, {
             method: "delete",
           })  
-          .then(location.href = `${host}`)
+          .then(location.href = `${host}`);
         })
 
-        submitButton.addEventListener("click", function (event) {
-          location.href = `${host}/submit`;
-        })
+
       });
+
+      submitButton.addEventListener("click", function (event) {
+        location.href = `${host}/submit`;
+      })
     }
   }
   http.send();
