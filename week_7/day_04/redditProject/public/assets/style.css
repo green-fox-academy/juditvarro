@@ -81,7 +81,7 @@ body {
   border: none;
 }
 
-.score {
+.scoreToStyle {
   font-family: "lato";
   font-weight: bold;
   color: rgb(134, 131, 131);

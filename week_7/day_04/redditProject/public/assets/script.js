@@ -38,7 +38,8 @@ window.onload = () => {
 
         let scoreNum = document.createElement("div");
         scoreNum.innerHTML = element.score;
-        scoreNum.className = "score";
+        scoreNum.className = `score_${element.id} scoreToStyle`
+        // scoreNum.className = 'scoreToStyle';
 
         let link = document.createElement("a");
         link.setAttribute("href", element.url);
@@ -86,24 +87,18 @@ window.onload = () => {
           fetch(`${host}/posts/${element.id}/upvote`, {
             method: "put",
           })  
-          .then(location.href = `${host}`);
+          const getUpscore = document.querySelector(`.score_${element.id}`)
+          getUpscore.textContent++;
         }
-
-        upvote.addEventListener("mouseout", function (eventOne) {
-          eventOne.target.setAttribute("src", "assets/img/upvote.png");
-        })
 
         downvote.onclick = () => {
           downVoteImg.setAttribute("src", "assets/img/downvoted.png");
           fetch(`${host}/posts/${element.id}/downvote`, {
             method: "put",
           })
-          .then(location.href = `${host}`);
+          const getDownScore = document.querySelector(`.score_${element.id}`)
+          getDownScore.textContent--;
         }
-
-        downvote.addEventListener("mouseout", function (eventTwo) {
-          eventTwo.target.setAttribute("src", "assets/img/downvote.png");
-        })
 
         hidePost.addEventListener("click", function (e) {
           if ("clicked") {
