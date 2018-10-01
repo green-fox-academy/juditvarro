@@ -53,6 +53,10 @@ window.onload = () => {
         hidePost.name = 'posthider';
         hidePost.innerText = 'hide this post';
 
+        let modifyPost = document.createElement('button');
+        modifyPost.name = 'postmodifyer';
+        modifyPost.innerText = 'modify this post';
+
         let deletePost = document.createElement("button");
         deletePost.name = "delete";
         deletePost.innerText = "delete this post";
@@ -67,6 +71,7 @@ window.onload = () => {
         separatePostContent.appendChild(link);
         separatePostContent.appendChild(timeOfPost);
         separatePostContent.appendChild(hidePost);
+        separatePostContent.appendChild(modifyPost);
         separatePostContent.appendChild(deletePost);
 
         separateContainers.appendChild(voter);
@@ -113,7 +118,6 @@ window.onload = () => {
           })  
           .then(location.href = `${host}`);
         })
-
 
       });
 
