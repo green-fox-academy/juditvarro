@@ -99,6 +99,14 @@ app.delete('/posts/:id', (req, res) => {
   })
 })
 
+// app.put('/posts/:id', (req, res) => {
+
+//   let idToModify = req.params.id;
+
+//   conn.query(``)
+
+// })
+
 app.put('/posts/:id/upvote', (req, res) => {
 
   let votedId = req.params.id;

@@ -83,13 +83,22 @@ window.onload = () => {
 
         upvote.onclick = () => {
           upVoteImg.setAttribute("src", "assets/img/upvoted.png");
-          upvote.addEventListener("mouseout", function (eventOne) {
-            eventOne.target.setAttribute("src", "assets/img/upvote.png");
-          })
+          fetch(`${host}/posts/${element.id}/upvote`, {
+            method: "put",
+          })  
+          .then(location.href = `${host}`);
         }
+
+        upvote.addEventListener("mouseout", function (eventOne) {
+          eventOne.target.setAttribute("src", "assets/img/upvote.png");
+        })
 
         downvote.onclick = () => {
           downVoteImg.setAttribute("src", "assets/img/downvoted.png");
+          fetch(`${host}/posts/${element.id}/downvote`, {
+            method: "put",
+          })
+          .then(location.href = `${host}`);
         }
 
         downvote.addEventListener("mouseout", function (eventTwo) {
