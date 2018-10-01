@@ -160,7 +160,7 @@ button[name="posthider"] {
   border-radius: 15px;
 }
 
-button[name="postmodifyer"] {
+.postmodifyer {
   cursor: pointer;
   margin-left: 20px;
   border: none;
@@ -229,7 +229,7 @@ button[name="posthider"]:hover {
   border-color: rgb(96, 187, 96);
 }
 
-button[name="postmodifyer"]:hover {
+.postmodifyer:hover {
   outline: none;
   filter: brightness(150%);
   border-color: rgb(96, 187, 96);
@@ -253,7 +253,7 @@ button[name="posthider"]:active {
   border-color: rgb(96, 187, 96);
 }
 
-button[name="postmodifyer"]:active {
+.postmodifyer:active {
   outline: none;
   filter: brightness(150%);
   border-color: rgb(96, 187, 96);
@@ -277,7 +277,7 @@ button[name="posthider"]:focus {
   border-color: rgb(96, 187, 96);
 }
 
-button[name="postmodifyer"]:focus {
+.postmodifyer:focus {
   outline: none;
   filter: brightness(150%);
   border-color: rgb(96, 187, 96);

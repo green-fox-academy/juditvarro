@@ -43,6 +43,10 @@ app.get('/submit', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/submit.html'))
 })
 
+app.get('/modify', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public/modify.html'))
+})
+
 app.get('/posts', (req, res) => {
   conn.query('SELECT * FROM posts', (err, result) => {
     if (err) {
@@ -99,13 +103,15 @@ app.delete('/posts/:id', (req, res) => {
   })
 })
 
-// app.put('/posts/:id', (req, res) => {
+app.put('/posts/:id', (req, res) => {
 
-//   let idToModify = req.params.id;
+  console.log("hwllo");
+  
+  // let idToModify = req.params.id;
 
-//   conn.query(``)
+  // conn.query(``)
 
-// })
+})
 
 app.put('/posts/:id/upvote', (req, res) => {
 

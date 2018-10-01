@@ -39,7 +39,6 @@ window.onload = () => {
         let scoreNum = document.createElement("div");
         scoreNum.innerHTML = element.score;
         scoreNum.className = `score_${element.id} scoreToStyle`
-        // scoreNum.className = 'scoreToStyle';
 
         let link = document.createElement("a");
         link.setAttribute("href", element.url);
@@ -55,8 +54,9 @@ window.onload = () => {
         hidePost.innerText = 'hide this post';
 
         let modifyPost = document.createElement('button');
-        modifyPost.name = 'postmodifyer';
+        modifyPost.className = 'postmodifyer';
         modifyPost.innerText = 'modify this post';
+        // modifyPost.setAttribute("type", "submit");
 
         let deletePost = document.createElement("button");
         deletePost.name = "delete";
@@ -125,6 +125,11 @@ window.onload = () => {
 
       });
 
+      let modifyButton = document.querySelector(".postmodifyer");
+      modifyButton.addEventListener("click", function (event) {
+        location.href = `${host}/modify`;
+      })
+      
       submitButton.addEventListener("click", function (event) {
         location.href = `${host}/submit`;
       })

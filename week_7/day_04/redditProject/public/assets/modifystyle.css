@@ -1,0 +1,105 @@
+html {
+  background: url("img/backgr.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  width: auto;
+  height: 94vh;
+}
+
+#upper {
+  background: black;
+  filter: opacity(0.9);
+  width: auto;
+  height: 200px;
+  position: relative;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#upper>header>h1 {
+  margin: 0;
+  text-transform: uppercase;
+  color: white;
+  font-size: 45px;
+  font-size-adjust: auto;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.5em;
+  font-family: "lato";
+}
+
+.modifysite {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+fieldset {
+  border: none;
+  background: rgba(231, 235, 231, 0.885);
+  padding: 50px;
+  padding-bottom: 30px;
+  width: 30%;
+  height: 30%;
+  font-family: "lato";
+  margin: 20px;
+}
+
+input {
+  margin: 10px;
+  font-family: "lato";
+  width: 85%;
+}
+
+legend {
+  font-weight: bolder;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+input:focus {
+  outline: none;
+  border-color: lightgreen;
+}
+
+button {
+  border: none;
+  font-family: "lato";
+  font-size: 15px;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  letter-spacing: 2px;
+  float: right;
+  margin-top: 20px;
+  font-weight: bolder;
+  border-radius: 15px;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+  filter: brightness(300%);
+  outline: rgb(96, 187, 96);
+}
+
+button:hover {
+  filter: brightness(300%);
+}
+
+button:active {
+  outline: none;
+}
