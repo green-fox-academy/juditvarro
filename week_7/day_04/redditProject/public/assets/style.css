@@ -142,14 +142,36 @@ p {
   padding: 10px;
 }
 
-.posthider {
+button[name="posthider"] {
   cursor: pointer;
-  margin: 0;
-  padding: 0;
+  margin-left: 20px;
+  border: none;
+  font-family: "lato";
+  font-size: 10px;
+  background: rgba(0, 0, 0, 0.781);
+  color: white;
+  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  border-radius: 15px;
 }
 
-.postshower {
+button[name="postshower"] {
   cursor: pointer;
+  margin-left: 20px;
+  height: 30px;
+  margin-top: 30px;
+  border: none;
+  font-family: "lato";
+  font-size: 10px;
+  background: rgba(0, 0, 0, 0.781);
+  color: white;
+  padding: 5px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  border-radius: 15px;
 }
 
 #container-submit>button:focus {
@@ -164,4 +186,57 @@ p {
 
 #container-submit>button:active {
   outline: none;
+}
+
+button[name="delete"] {
+  cursor: pointer;
+  float: center;
+  margin-left: 100px;
+  border: none;
+  font-family: "lato";
+  font-size: 10px;
+  background: rgba(82, 33, 33, 0.938);
+  color: white;
+  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+button[name="posthider"]:hover {
+  outline: none;
+  filter: brightness(150%);
+  border-color: rgb(96, 187, 96);
+}
+
+button[name="delete"]:hover {
+  outline: none;
+  filter: brightness(150%);
+  border: rgb(96, 187, 96);
+}
+
+button[name="postshower"]:hover {
+  outline: none;
+  filter: brightness(150%);
+  border: rgb(96, 187, 96);
+}
+
+button[name="posthider"]:active {
+  outline: none;
+  filter: brightness(150%);
+  border-color: rgb(96, 187, 96);
+}
+
+button[name="delete"]:active {
+  outline: none;
+  filter: brightness(150%);
+  border: rgb(96, 187, 96);
+}
+
+button[name="postshower"]:active {
+  outline: none;
+  filter: brightness(150%);
+  border: rgb(96, 187, 96);
 }

@@ -83,6 +83,22 @@ app.post('/posts', (req, res) => {
   }
 })
 
+app.delete('/posts/:id', (req, res) => {
+  let idToDelete = req.params.id;
+
+  conn.query(`DELETE FROM posts WHERE id = ${idToDelete};`, (err, result) => {
+    if(err) {
+      console.log(err.toString());
+      res.status(500).send('Database error');
+      return;
+    } else {
+      res.status(200).json({
+        posts: result,
+      })
+    }
+  })
+})
+
 app.put('/posts/:id/upvote', (req, res) => {
 
   let votedId = req.params.id;

@@ -88,6 +88,7 @@ button {
   margin-top: 20px;
   font-weight: bolder;
   border-radius: 15px;
+  cursor: pointer;
 }
 button:focus {
   outline: none;

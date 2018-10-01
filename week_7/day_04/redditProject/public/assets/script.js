@@ -49,9 +49,13 @@ window.onload = () => {
         let timeOfPost = document.createElement("p");
         timeOfPost.innerText = `submitted ${timeWithoutDay} by ${element.owner}`;
 
-        let hidePost = document.createElement('p');
-        hidePost.className = 'posthider';
+        let hidePost = document.createElement('button');
+        hidePost.name = 'posthider';
         hidePost.innerText = 'hide this post';
+
+        let deletePost = document.createElement("button");
+        deletePost.name = "delete";
+        deletePost.innerText = "delete this post";
 
         upvote.appendChild(upVoteImg);
         downvote.appendChild(downVoteImg);
@@ -63,6 +67,7 @@ window.onload = () => {
         separatePostContent.appendChild(link);
         separatePostContent.appendChild(timeOfPost);
         separatePostContent.appendChild(hidePost);
+        separatePostContent.appendChild(deletePost);
 
         separateContainers.appendChild(voter);
         separateContainers.appendChild(separatePostContent);
@@ -89,8 +94,8 @@ window.onload = () => {
         hidePost.addEventListener("click", function (e) {
           if ("clicked") {
             hidePost.parentElement.style.display = "none";
-            let showPost = document.createElement('p');
-            showPost.className = 'postshower';
+            let showPost = document.createElement('button');
+            showPost.name = 'postshower';
             showPost.innerText = 'show this post again';
             separateContainers.appendChild(showPost);
             showPost.addEventListener("click", function (e) {
@@ -101,7 +106,8 @@ window.onload = () => {
               })
           }
         });
-      
+
+        
         submitButton.addEventListener("click", function (event) {
           location.href = `${host}/submit`;
         })
