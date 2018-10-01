@@ -6,7 +6,7 @@ const PORT = 8084;
 const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const jsonParser = bodyParser.json();
+// const jsonParser = bodyParser.json();
 
 app.use(cors());
 app.use('/assets', express.static('public/assets'));
@@ -77,15 +77,13 @@ app.post('/posts', (req, res) => {
           res.status(500).send('Database error');
           return;
         }
-        res.status(200).json({
-          posts: resulter,
-        })
+        res.status(200).redirect('/');
       })
     })
   }
 })
 
-app.put('/posts/:id/upvote', jsonParser, (req, res) => {
+app.put('/posts/:id/upvote', (req, res) => {
 
   let votedId = req.params.id;
 
@@ -116,7 +114,7 @@ app.put('/posts/:id/upvote', jsonParser, (req, res) => {
   })
 })
 
-app.put('/posts/:id/downvote', jsonParser, (req, res) => {
+app.put('/posts/:id/downvote', (req, res) => {
 
   let votedId = req.params.id;
 
