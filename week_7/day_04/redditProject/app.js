@@ -59,9 +59,9 @@ app.post('/posts', (req, res) => {
 
   console.log(req.body);
   
-  let newTitle = req.body.submit[0];
-  let newURL = req.body.submit[1];
-  let newOwner = req.body.submit[2];
+  let newTitle = req.body.title;
+  let newURL = req.body.url;
+  let newOwner = req.body.owner;
   let today = new Date(Date.now()).toLocaleDateString();
 
   if (newTitle && newURL && newOwner) {
