@@ -47,14 +47,13 @@ app.get('/game', (req, res) => {
       console.log(result);
 
       let array = [];
-      
+
       result.forEach(element => {
         array.push(element);
       })
 
       console.log(array);
       
-
       res.status(200).json({
         id: result[0].id,
         question: result[0].question,
@@ -79,18 +78,52 @@ app.get('/questions', (req, res) => {
   })
 })
 
-app.post('/questions', (req, res) => {
+// app.post('/questions', (req, res) => {
   // If you fill the form
   // And click on the submit button
   // It should add a new question
   // And update the questions
-})
 
-app.delete('/questions/:id', (req, res) => {
-  //   If you click on the delete link (which is next to the question)
-  // It should delete the question and its answers
-})
+  // let newQuestion = req.body.question;
+  // let newAnswerOne = req.body.answer;
+  // let newAnswerTwo = req.body.answer;
+  // let newAnswerThree = req.body.answer;
+  // let newAnswerFour = req.body.answer;
+  // let correct = req.body.is_correct;
+  // let questionId = req.body.question_id;
 
-app.listen(PORT, () => {
-  console.log(`The app is up and running ${PORT}`);
-})
+  // if (newQuestion && newAnswerOne && newAnswerTwo && newAnswerThree && newAnswerFour && correct && questionId) {
+  //   conn.query('INSERT INTO questions (question) VALUES (?);', [newQuestion], (err, result) => {
+  //     if (err) {
+  //       console.log(err.toString());
+  //       res.status(500).send('Database error');
+  //       return;
+  //     }
+
+  //     conn.query('INSERT INTO answers (question) VALUES (?);', [newQuestion], (err, result) => {
+  //       if (err) {
+  //         console.log(err.toString());
+  //         res.status(500).send('Database error');
+  //         return;
+  //       }
+
+  //     conn.query(`SELECT * FROM posts WHERE id = ${result.insertId};`, (err, resulter) => {
+  //       if (err) {
+  //         console.log(err.toString());
+  //         res.status(500).send('Database error');
+  //         return;
+  //       }
+  //       res.status(200).redirect('/');
+  //     })
+  //   }
+    // )
+  // }
+
+  app.delete('/questions/:id', (req, res) => {
+    //   If you click on the delete link (which is next to the question)
+    // It should delete the question and its answers
+  })
+
+  app.listen(PORT, () => {
+    console.log(`The app is up and running ${PORT}`);
+  })
