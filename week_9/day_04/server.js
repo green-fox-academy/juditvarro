@@ -45,10 +45,20 @@ app.get('/game', (req, res) => {
       return;
     } else {
       console.log(result);
+
+      let array = [];
+      
+      result.forEach(element => {
+        array.push(element);
+      })
+
+      console.log(array);
+      
+
       res.status(200).json({
         id: result[0].id,
         question: result[0].question,
-        // answers: 
+        answers: array,
       })
     }
   })
