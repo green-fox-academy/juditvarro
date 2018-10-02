@@ -12,7 +12,7 @@ const bodyParser = require('body-parser');
 app.use(cors());
 app.use('/assets', express.static('public/assets'));
 
-app.use(bodyParser.urlencoded( { extended : false } ));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const mysql = require('mysql');
@@ -63,7 +63,7 @@ app.get('/posts', (req, res) => {
 app.post('/posts', (req, res) => {
 
   console.log(req.body);
-  
+
   let newTitle = req.body.title;
   let newURL = req.body.url;
   let newOwner = req.body.owner;
@@ -92,9 +92,9 @@ app.delete('/posts/:id', (req, res) => {
   let idToDelete = req.params.id;
 
   conn.query(`DELETE FROM posts WHERE id = ${idToDelete};`, (err, result) => {
-    if(err) {
+    if (err) {
       console.log(err.toString());
-      res.status(500).json({ error: 'Database error'});
+      res.status(500).json({ error: 'Database error' });
       return;
     } else {
       res.status(200);
@@ -105,13 +105,21 @@ app.delete('/posts/:id', (req, res) => {
 
 app.put('/posts/:id', (req, res) => {
 
-  console.log("hwllo");
-  
-  // let idToModify = req.params.id;
+  let idToModify = req.params.id;
+  let newTitle = req.body.title;
+  let newURL = req.body.url;
+  let newOwner = req.body.owner;
+  let today = new Date(Date.now()).toLocaleDateString();
 
-  // conn.query(``)
-
-})
+  conn.query(`UPDATE posts SET title = '${newTitle}', url = '${newURL}', timestamp = '${today}', score = 0, owner = '${newOwner}', vote = 0 WHERE id = ${idToModify};`, (err, result) => {
+    if (err) {
+      console.log(err.toString());
+      res.status(500).send('Database error');
+      return;
+    }
+    // res.redirect('/');
+  }
+)})
 
 app.put('/posts/:id/upvote', (req, res) => {
 

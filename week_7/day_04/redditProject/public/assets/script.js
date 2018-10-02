@@ -127,6 +127,10 @@ window.onload = () => {
 
       let modifyButton = document.querySelector(".postmodifyer");
       modifyButton.addEventListener("click", function (event) {
+
+        fetch(`${host}/posts/${element.id}`, {
+          method: "put",
+        })  
         location.href = `${host}/modify`;
       })
       
