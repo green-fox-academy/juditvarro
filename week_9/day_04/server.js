@@ -4,10 +4,10 @@ const express = require('express');
 const app = express();
 const PORT = 8088;
 const path = require('path');
-// const cors = require('cors');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 
-// app.use(cors());
+app.use(cors());
 app.use('/assets', express.static('assets'));
 
 app.use(bodyParser.urlencoded({ extended: false }));
