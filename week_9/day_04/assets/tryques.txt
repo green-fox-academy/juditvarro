@@ -1,0 +1,7 @@
+{
+	"question" : "how great is the green bay packers?",
+	"answer1" : "not so great",
+	"answer2" : "well...",
+	"answer3" : "great",
+	"answer4" : "amazing"
+}

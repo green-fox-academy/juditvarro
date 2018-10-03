@@ -33,6 +33,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/assets/index.html'))
 })
 
+app.get('/questioning', (req, res) => {
+  res.sendFile(path.join(__dirname, '/assets/questions.html'))
+})
+
 app.get('/game', (req, res) => {
   //This endpoint should return a random question with its answers.
 
@@ -87,9 +91,8 @@ app.post('/questions', (req, res) => {
   let newAnswerFour = req.body.answer4;
   let isCorrect = 0;
 
-  // if (newQuestion && newAnswerOne && newAnswerTwo && newAnswerThree && newAnswerFour && isCorrect) {
-  if(newQuestion)  { 
-  conn.query('INSERT INTO questions (question) VALUES (?);', [newQuestion], (err, result) => {
+  if (newQuestion) {
+    conn.query('INSERT INTO questions (question) VALUES (?);', [newQuestion], (err, result) => {
       if (err) {
         console.log(err.toString());
         res.status(500).send('Database error');
@@ -97,46 +100,50 @@ app.post('/questions', (req, res) => {
       }
 
       conn.query(`INSERT INTO answers (question_id, answer, is_correct) VALUES (${result.insertId}, '${newAnswerOne}', ${isCorrect}), (${result.insertId}, '${newAnswerTwo}', ${isCorrect}), (${result.insertId}, '${newAnswerThree}', ${isCorrect}), (${result.insertId}, '${newAnswerFour}', ${isCorrect});`, (err, resultee) => {
+        if (err) {
+          console.log(err.toString());
+          res.status(500).send('Database error');
+          return;
+        }
+
+        conn.query(`SELECT * FROM answers WHERE question_id = ${result.insertId};`, (err, resulteree) => {
           if (err) {
             console.log(err.toString());
             res.status(500).send('Database error');
             return;
           }
-
-      // conn.query('INSERT INTO answers (question_id, answer, is_correct) VALUES (?, ?, ?), (?, ?, ?);', [result.insertId, newAnswerOne, isCorrect], [result.insertId, newAnswerTwo, isCorrect], (err, resultee) => {
-      //   if (err) {
-      //     console.log(err.toString());
-      //     res.status(500).send('Database error');
-      //     return;
-      //   }
-
-        // conn.query('INSERT INTO answers (question_id, answer, is_correct) VALUES (?, ?, ?);', [result.insertId, newAnswerOne, isCorrect], (err, resultee) => {
-        //   if (err) {
-        //     console.log(err.toString());
-        //     res.status(500).send('Database error');
-        //     return;
-        //   }
-
-        conn.query(`SELECT * FROM answers WHERE id = ${resultee.insertId};`, (err, resulteree) => {
-          if (err) {
-            console.log(err.toString());
-            res.status(500).send('Database error');
-            return;
-          }
-          res.status(200).json({
-            newAnswers: resulteree
-          })
+          console.log(resulteree)
+          res.redirect('/');
         })
       })
     })
-    // })
   }
 })
 
 app.delete('/questions/:id', (req, res) => {
   //   If you click on the delete link (which is next to the question)
   // It should delete the question and its answers
+
+  let questionToDelete = req.params.id;
+
+  conn.query(`DELETE FROM questions WHERE id = ${questionToDelete};`, (err, result) => {
+    if (err) {
+      console.log(err.toString());
+      res.status(500).json({ error: 'Database error' });
+      return;
+    }
+    conn.query(`DELETE FROM answers WHERE question_id = ${questionToDelete};`, (err, result) => {
+      if (err) {
+        console.log(err.toString());
+        res.status(500).json({ error: 'Database error' });
+        return;
+      }
+    })
+    res.status(200);
+    console.log(questionToDelete);
+  })
 })
+
 
 app.listen(PORT, () => {
   console.log(`The app is up and running ${PORT}`);
