@@ -89,7 +89,34 @@ app.post('/questions', (req, res) => {
   let newAnswerTwo = req.body.answer2;
   let newAnswerThree = req.body.answer3;
   let newAnswerFour = req.body.answer4;
-  let isCorrect = 0;
+  let isCorrect1 = req.body.isCorrect1;
+  let isCorrect2 = req.body.isCorrect2;
+  let isCorrect3 = req.body.isCorrect3;
+  let isCorrect4 = req.body.isCorrect4;
+
+  if (isCorrect1 === true ) {
+    isCorrect1 = 1;
+  }  else {
+    isCorrect1 = 0;
+  }
+
+  if (isCorrect2 === true ) {
+    isCorrect2 = 1;
+  }  else {
+    isCorrect2 = 0;
+  }
+
+  if (isCorrect3 === true ) {
+    isCorrect3 = 1;
+  }  else {
+    isCorrect3 = 0;
+  }
+
+  if (isCorrect4 === true ) {
+    isCorrect4 = 1;
+  }  else {
+    isCorrect4 = 0;
+  }
 
   if (newQuestion) {
     conn.query('INSERT INTO questions (question) VALUES (?);', [newQuestion], (err, result) => {
@@ -99,7 +126,7 @@ app.post('/questions', (req, res) => {
         return;
       }
 
-      conn.query(`INSERT INTO answers (question_id, answer, is_correct) VALUES (${result.insertId}, '${newAnswerOne}', ${isCorrect}), (${result.insertId}, '${newAnswerTwo}', ${isCorrect}), (${result.insertId}, '${newAnswerThree}', ${isCorrect}), (${result.insertId}, '${newAnswerFour}', ${isCorrect});`, (err, resultee) => {
+      conn.query(`INSERT INTO answers (question_id, answer, is_correct) VALUES (${result.insertId}, '${newAnswerOne}', ${isCorrect1}), (${result.insertId}, '${newAnswerTwo}', ${isCorrect2}), (${result.insertId}, '${newAnswerThree}', ${isCorrect3}), (${result.insertId}, '${newAnswerFour}', ${isCorrect4});`, (err, resultee) => {
         if (err) {
           console.log(err.toString());
           res.status(500).send('Database error');
@@ -112,8 +139,6 @@ app.post('/questions', (req, res) => {
             res.status(500).send('Database error');
             return;
           }
-          console.log(resulteree)
-          res.redirect('/');
         })
       })
     })

@@ -8,3 +8,11 @@ body {
   justify-content: center;
   /* align-items: center; */
 }
+
+button[id="0"]:focus{
+  background: red;
+}
+
+button[id="1"]:focus{
+  background: green;
+}

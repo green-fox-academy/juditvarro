@@ -11,44 +11,50 @@
 </head>
 
 <body>
-    <h1>Manage questions</h1><br>
+  <h1>Manage questions</h1><br>
   <div class="manage">
-   
+
   </div>
   <div class="create a new question">
-<form action="http://localhost:8088/questions" method="POST" enctype="application/json">
-    <h1>Create a new question</h1>
-    <input type="text" name="question" placeholder="Type your question here">
+    <form id="form">
+      <!-- action="http://localhost:8088/questions" method="POST" enctype="application/json"> -->
+      <h1>Create a new question</h1>
+      <input id="ques" type="text" name="question" placeholder="Type your question here">
 
-    <div class="answers">
-      <h2>Answers</h2>
-    </div>
+      <div class="answers">
+        <h2>Answers</h2>
+      </div>
 
-    <label for="1"> #1 </label>
-    <input type="text" id="1" name="answer1" placeholder="Type your answer here">
-    <input type="radio" name="is_correct">
-    <br>
-    
-    <label for="2"> #2 </label><input type="text" id="2" name="answer2" placeholder="Type your answer here">
-    <input type="radio" name="is_correct">
-    <br>
-    
-    <label for="3"> #3 </label><input type="text" id="3" name="answer3" placeholder="Type your answer here">
-    <input type="radio" name="is_correct">
-    <br>
-    
-    <label for="4"> #4 </label><input type="text" id="4"name="answer4" placeholder="Type your answer here">
-    <input type="radio" name="is_correct">
-    <br>
-    
-    <div class="button">
-      <button type="submit">SUBMIT</button>
-    </div>
+      <label for="1"> #1 </label>
+      <input type="text" id="1" name="answer" placeholder="Type your answer here">
 
-    <div class="back">
-      <a href="http://localhost:8088">Go back to the game</a>
-    </div>
-  </form>
+      <input type="radio" id="radio1" name="is_correct">
+      <br>
+
+      <label for="2"> #2 </label><input type="text" id="2" name="answer" placeholder="Type your answer here">
+
+      <input type="radio" id="radio2" name="is_correct">
+      <br>
+
+      <label for="3"> #3 </label><input type="text" id="3" name="answer" placeholder="Type your answer here">
+
+      <input type="radio" id="radio3" name="is_correct">
+      <br>
+
+      <label for="4"> #4 </label><input type="text" id="4" name="answer" placeholder="Type your answer here">
+
+      <input type="radio" id="radio4" name="is_correct">
+      <br>
+
+      <div class="button">
+        <button>SUBMIT</button>
+      </div>
+
+      <div class="back">
+        <a href="http://localhost:8088">Go back to the game</a>
+      </div>
+    </form>
   </div>
 </body>
+
 </html>
