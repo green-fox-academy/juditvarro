@@ -13,39 +13,24 @@ window.onload = () => {
     if (http.status === 200) {
       const questionContent = JSON.parse(http.response);
 
-      console.log(questionContent);
-
       const question = document.createElement("h3");
       question.setAttribute("name", "question");
-      question.innerHTML = questionContent.question;
-
       const optionA = document.createElement("div");
       optionA.className = "option_A";
       const buttonA = document.createElement("button");
-      // buttonA.setAttribute("name", "optionA");
       buttonA.setAttribute("id", `${questionContent.answers[0].is_correct}`)
-      buttonA.innerHTML = questionContent.answers[0].answer;
-
       const optionB = document.createElement("div");
       optionB.className = "option_B";
       const buttonB = document.createElement("button");
-      // buttonB.setAttribute("name", "optionB");
       buttonB.setAttribute("id", `${questionContent.answers[1].is_correct}`)
-      buttonB.innerHTML = questionContent.answers[1].answer;
-
       const optionC = document.createElement("div");
       optionC.className = "option_C"
       const buttonC = document.createElement("button");
-      // buttonC.setAttribute("name", "optionC");
       buttonC.setAttribute("id", `${questionContent.answers[2].is_correct}`)
-      buttonC.innerHTML = questionContent.answers[2].answer;
-
       const optionD = document.createElement("div");
       optionD.className = "option_D";
       const buttonD = document.createElement("button");
-      // buttonD.setAttribute("name", "optionD");
       buttonD.setAttribute("id", `${questionContent.answers[3].is_correct}`)
-      buttonD.innerHTML = questionContent.answers[3].answer;
 
       mainContent.appendChild(question);
 
@@ -59,28 +44,49 @@ window.onload = () => {
       answerContent.appendChild(optionC);
       answerContent.appendChild(optionD);
 
+      fetch(`${host}/game`)
+        .then((res) => res.json())
+        .then((questionContent) => {
+          question.innerHTML = questionContent.question;
+          buttonA.innerHTML = questionContent.answers[0].answer;
+          buttonB.innerHTML = questionContent.answers[1].answer;
+          buttonC.innerHTML = questionContent.answers[2].answer;
+          buttonD.innerHTML = questionContent.answers[3].answer;
+        })
+
+        setInterval(() => 
+        fetch(`${host}/game`)
+        .then((res) => res.json())
+        .then((questionContent) => {
+          question.innerHTML = questionContent.question;
+          buttonA.innerHTML = questionContent.answers[0].answer;
+          buttonB.innerHTML = questionContent.answers[1].answer;
+          buttonC.innerHTML = questionContent.answers[2].answer;
+          buttonD.innerHTML = questionContent.answers[3].answer;
+        }), 5000)
+
       buttonA.addEventListener("click", function (e) {
         if (event.target.id === "1") {
           currentscore.textContent++;
-        } 
+        }
       })
 
       buttonB.addEventListener("click", function (e) {
         if (event.target.id === "1") {
           currentscore.textContent++;
-        } 
+        }
       })
 
       buttonC.addEventListener("click", function (e) {
         if (event.target.id === "1") {
           currentscore.textContent++;
-        } 
+        }
       })
 
       buttonD.addEventListener("click", function (e) {
-       if (event.target.id === "1") {
+        if (event.target.id === "1") {
           currentscore.textContent++;
-        } 
+        }
       })
     }
   }

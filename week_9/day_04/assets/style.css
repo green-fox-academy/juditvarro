@@ -9,10 +9,10 @@ body {
   /* align-items: center; */
 }
 
-button[id="0"]:focus{
+button[id="0"]:active{
   background: red;
 }
 
-button[id="1"]:focus{
+button[id="1"]:active{
   background: green;
 }
